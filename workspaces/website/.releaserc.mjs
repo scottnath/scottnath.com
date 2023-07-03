@@ -17,5 +17,9 @@ const plugins = config.plugins.map(plugin => {
 
 export default {
   ...config,
-  plugins
+  plugins,
+  branches: [
+    { name: 'main' },
+    { name: 'setup', channel: 'setup', prerelease: true },
+  ],
 };
