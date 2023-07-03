@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import linkedinLogo from '~/assets/logos/linkedin.svg';
+import githubLogo from '~/assets/logos/github.svg';
+import mastodonLogo from '~/assets/logos/Mastodon.svg';
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h2>Hi, I'm Scott Nath.</h2>
+			<p>{SITE_DESCRIPTION}</p>
+
+			<h2>Find me here:</h2>
+			<ul class="find-me">
+				<li><a href="https://www.linkedin.com/in/scottnath"><img src={linkedinLogo.src} alt="LinkedIn logo" /> LinkedIn</a></li>
+				<li><a href="https://github.com/scottnath"><img src={githubLogo.src} alt="GitHub logo" /> GitHub</a></li>
+				<li><a rel="me" href="https://mastodon.social/@scottnath"><img src={mastodonLogo.src} alt="Mastodon logo" /> Mastodon</a></li>
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>

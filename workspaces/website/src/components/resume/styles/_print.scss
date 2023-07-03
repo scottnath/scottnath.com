@@ -1,0 +1,87 @@
+
+@media print {
+
+
+  :root {
+    font-size: 100%;
+  }
+
+  body {
+    color: black;
+    background-color: white;
+    -webkit-text-size-adjust: 100%;
+    padding: 0;
+  }
+
+  .resume__title {
+    padding-top: 1em;
+  }
+
+  .resume__header, .resume__section, .resume__footer {
+    margin: calc($spacing-unit / 4) auto;
+    padding: 0;
+    border-radius: 0;
+  }
+  .resume__section__title {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+
+  .resume__tech-skills .title{
+    margin-bottom: 0;
+  }
+
+  .skills {
+    float: none;
+    width: auto;
+  }
+  .skills dt {
+    display: inline;
+
+    &::after {
+      content: ': ';
+    }
+
+  }
+  .skills dd {
+    display: inline;
+    margin: 0;
+    font-size: .9em;
+
+    &::after {
+      content: ', '
+    }
+
+    &:last-of-type::after {
+      content: '';
+    }
+
+  }
+
+
+  .resume__experience {
+    font-size: .8em;
+  }
+  .resume__experience .title{
+    margin-bottom: .2em;
+  }
+
+  .resume__experience__date {
+    font-size: .7em;
+    margin-bottom: 0;
+    line-height: 1.2em;
+  }
+  .resume__experience__summary {
+    line-height: 1.5em;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .resume__experience__desc {
+    display: none;
+  }
+
+  .resume__projects {
+    page-break-before: always;
+  }
+}

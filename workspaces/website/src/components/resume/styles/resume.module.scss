@@ -1,0 +1,102 @@
+@import './variables';
+
+.resume {
+  h1.title {
+    color: red;
+  }
+  .resume__header, .resume__section, .resume__footer {
+    background-color: #fff;
+    margin: calc($spacing-unit / 2) auto;
+    padding: calc($spacing-unit / 2);
+    border-radius: calc($spacing-unit / 4);
+    overflow: hidden;
+  }
+  .resume__title {
+    font-size: 1.9em;
+    margin-bottom: calc($spacing-unit / 4);
+  }
+  .resume__subtitle {
+    font-size: 1.4em;
+    margin-bottom: calc($spacing-unit / 6);
+    color: blue;
+  }
+  
+  .resume__summary {
+    p {
+      margin-bottom: 0;
+    }
+    margin-bottom: 0;
+  }
+  
+  
+  
+  .resume__experience__employer {
+    padding-bottom: calc($spacing-unit / 2);
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+  
+  .resume__experience__title {
+  
+    margin: 0;
+  
+    .org,
+    .parent {
+      display: block;
+      border-bottom: 1px solid;
+      margin-bottom: calc($spacing-unit / 6);
+      font-weight: 300;
+  
+      &.hide {
+        display: none;
+      }
+    }
+  
+    .job-title {
+      display: block;
+      font-size: .9em;
+      margin-bottom: calc($spacing-unit / 6);
+    }
+  }
+  
+  .resume__experience__date {
+    font-size: .9em;
+    margin-bottom: calc($spacing-unit / 6);
+    padding-left:  calc($spacing-unit / 3);
+    padding-right:  calc($spacing-unit / 3);
+  }
+  
+  .resume__experience__employer {
+    details {
+      padding-left:  calc($spacing-unit / 3);
+      padding-right:  calc($spacing-unit / 3);
+    }
+    details summary { list-style-type: none; } /* Firefox */
+    details summary::-webkit-details-marker { display: none; } /* Chrome */
+    details summary::marker { display: none; }
+  
+  }
+  
+  .resume__experience__summary {
+    margin-bottom: calc($spacing-unit / 6);
+  }
+  
+  .resume__experience__desc {
+    font-size: .9em;
+    padding-left:  calc($spacing-unit / 3);
+    padding-right:  calc($spacing-unit / 3);
+    font-style: italic;
+  
+    p {
+      margin-bottom: calc($spacing-unit / 6);
+    }
+  }
+  .resume__experience .urls {
+    font-size: .9em;
+  }
+  
+  @import './print';
+  
+
+}

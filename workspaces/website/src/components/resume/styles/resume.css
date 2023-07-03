@@ -1,0 +1,295 @@
+
+
+.with-conic-gradient {
+	--angle: 0deg;
+  border-style: solid;
+  border-width: 2px;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	padding: 1em;
+
+	animation: 10s rotate linear infinite;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.print-show {
+  visibility: hidden;
+}
+.contact-me {
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: .5em;
+  margin: .3rem 0 0;
+  text-align: right;
+  font-size: .8em;
+}
+.contact-me ul,
+.contact-me li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skillset {
+  margin: 1em 0 0;
+}
+.skills dt {
+  display: block;
+  font-weight: 800;
+}
+
+.skills dt:after {
+  content: ": "
+}
+
+.skills dd {
+  display: inline;
+  margin: 0;
+  font-size: .9em
+}
+
+.skills dd:after {
+  content: ", "
+}
+
+.skills dd:last-of-type:after {
+  content: ""
+}
+.resume {
+  position: relative;
+}
+.resume__tech-skills {
+  font-size: .8rem
+}
+
+.resume__footer,.resume__header {
+  margin: 0 auto;
+  padding: 0;
+}
+.resume__section {
+  background-color: #fff;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: .5em;
+  overflow: hidden
+}
+.resume__section .title {
+  font-weight: 300;
+}
+
+a.title-link svg,
+a.title-link:visited svg {
+	fill: var(--text-color);
+	width: .9em;
+	height: .9em;
+}
+a.title-link svg,
+a.title-link span {
+  margin-left: .25em;
+}
+.resume__title {
+  font-size: 1.9em;
+  margin-bottom: .5em;
+  font-weight: 300;
+}
+
+.resume__subtitle {
+  font-size: 1.4em;
+  margin-bottom: .33333em;
+  font-weight: 300;
+}
+
+.resume__summary,.resume__summary p {
+  margin-bottom: 0
+}
+
+.resume__experience__employer {
+  padding-top: 1em
+}
+
+.resume__experience__employer:last-of-type {
+  padding-bottom: 0
+}
+
+.resume__experience__title {
+  margin: 0
+}
+
+.resume__experience__title .org,
+.resume__experience__title .parent {
+  display: block;
+  border-bottom: 1px solid;
+  margin-bottom: .33333em;
+  font-weight: 300
+}
+
+.resume__experience__title .org.hide,
+.resume__experience__title .parent.hide {
+  display: none
+}
+
+.resume__experience__title .org img,
+.resume__experience__title .parent img {
+  margin-left: .2em;
+}
+
+.resume__experience__title .job-title {
+  display: inline-block;
+  font-size: .8em;
+  margin-bottom: .33333em
+}
+
+.resume__experience__date {
+  font-size: .6em;
+  margin: 0;
+  padding-left: 1em;
+}
+
+.resume__experience__employer details summary {
+  list-style-type: none
+}
+
+.resume__experience__employer details summary::-webkit-details-marker {
+  display: none
+}
+
+.resume__experience__employer details summary::marker {
+  display: none
+}
+
+.position .summary {
+  margin: 0;
+  padding: 0 0 0 .6em;
+  font-size: .8em;
+}
+
+.resume__experience__desc {
+  font-size: .8em;
+  padding-left: .66667em;
+  padding-right: .66667em;
+  font-style: italic
+}
+
+.resume__experience__desc p {
+  margin-bottom: .33333em
+}
+.resume__experience__desc ul {
+  margin: 0;
+  padding: 0 1em;
+}
+.resume__experience__desc ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.resume__experience .urls {
+  font-size: .9em
+}
+
+@media print {
+  :root {
+    font-size: 100%
+  }
+
+  body {
+    color: #000;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    padding: 0;
+    max-width: 100%;
+  }
+  body > header,
+  body > footer  {
+    display: none;
+  }
+
+  a,
+  a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  .print-hide {
+    visibility: hidden;
+  }
+  .print-show {
+    visibility: visible;
+  }
+  .actions {
+    display: none;
+    background-color: red;
+  }
+  .truncatable {
+    display: none;
+  }
+
+  .resume {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .resume__title {
+    padding-top: 0
+  }
+  
+  .resume__section {
+    padding: 0;
+    border-top: 1px solid #efefef;
+  }
+
+  .resume__section__title {
+    font-size: 1.2em;
+    font-weight: 500
+  }
+
+  .resume__tech-skills {
+    border: none;
+  }
+  .resume__tech-skills .title {
+    margin-bottom: 0
+  }
+
+  .skills dt {
+      display: inline
+  }
+
+  .resume__experience {
+      font-size: .8em
+  }
+
+  .position .job-title {
+    margin-bottom: 0
+  }
+
+  .resume__experience__date {
+      font-size: .7em;
+      margin-bottom: 0;
+      line-height: 1.2em
+  }
+
+  .position .summary {
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume__experience__desc {
+    font-size: .8em;
+    margin-bottom: 0;
+    line-height: 1.2em
+  }
+
+  .resume__projects {
+      page-break-before: always
+  }
+}
