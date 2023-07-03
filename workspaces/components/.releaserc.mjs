@@ -5,7 +5,7 @@ const plugins = config.plugins.map(plugin => {
     return [
       'semantic-release-gitmoji',
       {
-        tagFormat: 'scottnath-dot-com@v${version}',
+        tagFormat: 'scottnath-components@v${version}',
         releaseRules,
       }
     ];
@@ -17,9 +17,5 @@ const plugins = config.plugins.map(plugin => {
 
 export default {
   ...config,
-  plugins,
-  branches: [
-    { name: 'main' },
-    { name: 'setup', channel: 'setup', prerelease: true },
-  ],
+  plugins
 };
