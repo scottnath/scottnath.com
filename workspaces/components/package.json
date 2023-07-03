@@ -1,0 +1,19 @@
+{
+  "name": "scottnath-components",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook"
+  },
+  "type": "module",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottnath/scottnath.com.git"
+  },
+  "author": "scottnath",
+  "license": "MIT",
+  "devDependencies": {
+    "storydocker-utilities": "^0.0.2"
+  }
+}

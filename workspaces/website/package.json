@@ -1,0 +1,41 @@
+{
+  "name": "website",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "404file": "cp ./404.html ./dist/404.html",
+    "jekyllfile": "touch ./dist/.nojekyll",
+    "cname": "echo \"scottnath.com\" >>  ./dist/CNAME",
+    "site-files": "npm run 404file && npm run jekyllfile && npm run cname"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.19.0",
+    "@astrojs/react": "^2.1.1",
+    "@astrojs/rss": "^2.3.2",
+    "@astrojs/sitemap": "^1.2.2",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "airtable": "^0.11.6",
+    "astro": "^2.3.0",
+    "marked": "^5.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@astrojs/partytown": "^1.2.1",
+    "@storybook/testing-library": "^0.1.0",
+    "@testing-library/react": "^14.0.0",
+    "astro-icon": "^0.8.0",
+    "postcss-nested": "^6.0.1",
+    "prop-types": "^15.8.1",
+    "sass": "^1.62.0",
+    "vite": "^4.2.1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "scottnath.com",
+  "version": "0.0.0",
+  "description": "website dev environment with a component library",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottnath/scottnath.com.git"
+  },
+  "scripts": {
+    "start": "npm run start -w workspaces/website",
+    "build": "npm run build -w workspaces/website",
+    "preview": "npm run preview -w workspaces/website",
+    "site-files": "npm run site-files -w workspaces/website"
+  },
+  "keywords": [
+    "scottnath",
+    "software developer"
+  ],
+  "author": "scottnath",
+  "license": "MIT",
+  "workspaces": [
+    "workspaces/*"
+  ]
+}

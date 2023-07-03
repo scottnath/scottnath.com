@@ -1,0 +1,27 @@
+---
+
+import SiteWide from '~layouts/SiteWide.astro';
+import Resume from "../components/resume/index";
+
+import { getResume } from "../utils/airtable";
+
+const content = await getResume();
+const pageTitle = `Resume for Scott Nath - ${content.basics.short_summary}`;
+---
+<SiteWide title={pageTitle} description={content.basics.summary}>
+  <ul class="actions">
+    <li><button onclick="window.print();">🖨️ print</button></li>
+  </ul>
+	<Resume
+		title={content.basics.title}
+		subtitle={content.basics.subtitle}
+		summary={content.basics.summary}
+		email={content.basics.email}
+		phone={content.basics.phone}
+		website={content.basics.website}
+		skillsets={content.skillsets}
+		jobs={content.positions}
+		projects={content.projects}
+	/>
+
+</SiteWide>
