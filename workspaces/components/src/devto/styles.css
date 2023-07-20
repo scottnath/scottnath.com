@@ -1,0 +1,190 @@
+:host {
+  /** styles from forem/forem */
+  --ff-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+  'Segoe UI Symbol';
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+  --grey-100: 245, 245, 245;
+  --grey-900: 23, 23, 23;
+  --indigo-600: 79, 70, 229;
+  --indigo-700: 67, 56, 202;
+  --base-60: #717171;
+  --base-70: #575757;
+  --base-90: #242424;
+  --radius: 0.375rem;
+  --radius-auto: Max(0px, Min(var(--radius), calc((100vw - 4px - 100%) * 9999))) / var(--radius);
+
+  --body-bg: rgb(var(--grey-100));
+  --card-bg: rgb(var(--white));
+  --card-color: var(--base-70);
+  --card-color-bold: var(--base-90);
+  --card-shadow-color: rgba(var(--grey-900), 0.05);
+  --fw-bold: 700;
+
+  --accent-brand: rgb(var(--indigo-600));
+  --accent-brand-darker: rgb(var(--indigo-700));
+  --profile-brand-color: rgb(var(--black));
+
+  --cta-bg: transparent;
+  --cta-bg-hover: rgba(var(--indigo-600), 0.1);
+  --cta-color: rgb(var(--grey-800));
+  --cta-color-hover: var(--accent-brand-darker);
+  --cta-border: rgb(var(--grey-600));
+  --cta-border-hover: var(--accent-brand-darker);
+
+  --cta-branded-bg: transparent;
+  --cta-branded-bg-hover: var(--accent-brand);
+  --cta-branded-color: var(--accent-brand);
+  --cta-branded-color-hover: rgb(var(--white));
+  --cta-branded-border: var(--accent-brand);
+  --cta-branded-border-hover: var(--accent-brand-darker);
+}
+:host {
+  color: var(--card-color);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: var(--ff-sans-serif);
+}
+/** root elements cleanup */
+a {
+  text-decoration: none;
+}
+dl, dd, dt {
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0.5em 0;
+}
+p > svg {
+  vertical-align: top;
+  width: 1.3em;
+  height: 1.3em;
+}
+address {
+  font-style: normal;
+}
+
+:host::part(mild) {
+  font-size: .875em;
+  color: var(--base-70);
+}
+:host::part(bold) {
+  font-size: 1.25em;
+  color: var(--card-color-bold);
+  font-weight: var(--fw-bold);
+}
+
+:host::part(container) {
+  position: relative;
+  border-top: 2em solid var(--profile-brand-color);
+  border-radius: var(--radius-auto);
+  box-shadow: 0 0 0 1px var(--card-shadow-color);
+  background: var(--card-bg);
+
+  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  max-width: 30em;
+}
+
+:host header {
+  border-bottom: 1px solid var(--body-bg);
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+:host footer {
+  border-top: 1px solid var(--body-bg);
+  margin: 1em 0 0;
+  padding: 1em;
+}
+
+:host::part(logo) {
+  width: 1.6em;
+  height: 1.6em;
+  margin: 0 auto;
+  position: absolute;
+  right: 1em;
+  top: -1.8em;
+  box-shadow: 0 0 0 1px white;
+  border-radius: .07em;
+}
+
+:host header a {
+  display: flex;
+  margin-top: -1em;
+}
+
+:host::part(avatar-container) {
+  display: inline-block;
+  border-radius: 100%;
+  position: relative;
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  vertical-align: middle;
+  flex-shrink: 0;
+  margin-right: .5em;
+}
+:host::part(avatar) {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+:host::part(name) {
+  margin-top: 1.25em;
+}
+
+:host::part(main) {
+  padding: 0 1em;
+}
+
+:host::part(post) {
+  /* display: flex;
+  gap: .5em; */
+  color: var(--card-color-bold);
+}
+:host::part(post-img) {
+  width: 100%;
+  height: auto;
+  /* object-fit: scale-down; */
+}
+:host::part(cta) {
+  border: 1px solid;
+  outline: 0;
+  text-align: center;
+  display: block;
+  position: relative;
+  overflow-wrap: normal;
+  padding: .5em 1em;
+
+  border-color: var(--cta-border);
+  border-radius: var(--radius);
+  background-color: var(--cta-bg);
+  color: var(--cta-color);
+}
+
+:host::part(cta):hover, :host::part(cta):focus {
+  background-color: var(--cta-bg-hover);
+  border-color: var(--cta-border-hover);
+  color: var(--cta-color-hover);
+}
+
+:host::part(cta):focus {
+  box-shadow: var(--focus-ring);
+  text-decoration: underline
+}
+
+:host::part(branded) {
+  border-color: var(--cta-branded-border);
+  background-color: var(--cta-branded-bg);
+  color: var(--cta-branded-color);
+}
+:host::part(branded):hover, :host::part(branded):focus {
+  background-color: var(--cta-branded-bg-hover);
+  border-color: var(--cta-branded-border-hover);
+  color: var(--cta-branded-color-hover);
+}
