@@ -10,6 +10,13 @@ WIP for use on scottnath.com only
 - [ ] re-do `parts`, removing parts that are just for style-sharing
 - [ ] interaction tests
 - [ ] a11y testing
+- [ ] create custom element manifest
+  - [ ] need [plugins](https://custom-elements-manifest.open-wc.org/blog/intro/#plugins) to do JSDoc correctly
+- [ ] separate out fetch and data handling from component
+- [ ] alt-option that allows use of api-key
+- [ ] test in plain HTML page
+- [ ] test in Qwik
+- [ ] test in Next.js
 
 ## Inspriation
 

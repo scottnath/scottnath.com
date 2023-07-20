@@ -59,11 +59,3 @@ export const UnknownUsername = {
     username: 'NotAUserMeow',
   },
 }
-
-// export const story3 = () => '<dev-user username="scottnath"></dev-user>';
-
-// export const story4 = () => '<dev-user username="danielasaboro"></dev-user>';
-
-// export const story5 = () => '<dev-user username="soyecoder"></dev-user>';
-
-// export const story6 = () => '<dev-user username="NotAUserMeow"></dev-user>';
