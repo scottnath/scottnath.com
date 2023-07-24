@@ -65,6 +65,9 @@ p > svg {
 address {
   font-style: normal;
 }
+.summary {
+  font-style: italic;
+}
 
 :host::part(mild) {
   font-size: .875em;

@@ -1,4 +1,6 @@
 ---
+import { DevToProfileCard } from 'scottnath-components/src/devto/profile-card';
+import { getUserContent } from 'scottnath-components/src/devto/get-devto-user';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -7,6 +9,7 @@ import linkedinLogo from '~/assets/logos/linkedin.svg';
 import githubLogo from '~/assets/logos/github.svg';
 import mastodonLogo from '~/assets/logos/Mastodon.svg';
 
+const { user, posts } = await getUserContent('scottnath');
 ---
 
 <!DOCTYPE html>
@@ -19,13 +22,18 @@ import mastodonLogo from '~/assets/logos/Mastodon.svg';
 		<main>
 			<h2>Hi, I'm Scott Nath.</h2>
 			<p>{SITE_DESCRIPTION}</p>
-
+      
 			<h2>Find me here:</h2>
+      
 			<ul class="find-me">
 				<li><a href="https://www.linkedin.com/in/scottnath"><img src={linkedinLogo.src} alt="LinkedIn logo" /> LinkedIn</a></li>
 				<li><a href="https://github.com/scottnath"><img src={githubLogo.src} alt="GitHub logo" /> GitHub</a></li>
 				<li><a rel="me" href="https://mastodon.social/@scottnath"><img src={mastodonLogo.src} alt="Mastodon logo" /> Mastodon</a></li>
 			</ul>
+      <dl class="social-cards">
+        <dt>dev.to:</dt>
+        <dd><DevToProfileCard user={user} latest_post={posts[0]}></DevToProfile></dd>
+      </dl>
 		</main>
 		<Footer />
 	</body>

@@ -36,6 +36,20 @@ const postSvg = html`<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http
 </svg>`;
 
 /**
+ * Format a date for machine-readability
+ * @param {string} dt 
+ * @returns {string} - the machine-readable value of the date
+ */
+export const formatDate = (dt) => {
+  const x = new Date(dt);
+  const year = x.getFullYear()
+  const month = String(x.getMonth() + 1).padStart(2, '0')
+  const day = String(x.getDate()).padStart(2, '0')
+
+  return `${year}-${month}-${day}`
+}
+
+/**
  * Content about one post by dev.to (or Forem) user, sourced from the Forem API.
  * @see https://developers.forem.com/api/v1#tag/articles/operation/getLatestArticles
  * @typedef {Object} ForemPost
@@ -51,6 +65,16 @@ const postSvg = html`<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http
 const postLink = (post) => html`<a href="${post.url}" part="post">
 <img src="${post.cover_image}" part="post-img" alt="Cover image for post ${post.title}" />
 ${post.title}</a>`;
+
+/**
+ * @function Render a post description term group
+ * @param {string} term - the term to describe
+ * @param {ForemPost} post - Content about a post
+ */
+const postDescription = (term, post) => post ? html`
+<dt part="mild">${term}</dt>
+<dd>${postLink(post)}</dd>
+` : '';
 
 /**
  * Content about a dev.to (or Forem) user, sourced from the Forem API and combined with post data.
@@ -84,147 +108,98 @@ const profileLink = (user) => html`
 const userAvatar = (user) => html`<img src="${user?.profile_image}" part="avatar" alt="Avatar for ${user?.name}" loading="lazy" />`;
 
 /**
- * Render a user's joined date
- * @param {ForemUser} user - Content about a user
+ * @function Render a user's summary content
+ * @param {string} summary - the user's bio
  */
-const userJoined = (user) => this.user?.joined_at ? html`<p part="mild">
+export const userSummary = (summary) => summary ? html`<p class="summary">${summary}</p>` : '';
+
+/**
+ * @function Render a user's joined date
+ * @param {string} joined_at - date the user joined
+ */
+export const userJoined = (joined_at) => joined_at ? html`<p part="mild">
 ${joinedSvg} 
 <span>Joined on 
-  <time datetime="${this.user?.joined}">${this.user?.joined_at}</time>
+  <time datetime="${formatDate(joined_at)}">${joined_at}</time>
 </span>
 </p>
 ` : '';
 
 /**
- * dev.to profile component
- * @element dev-user
- * @cssprop --devto-color
- * @prop {string} username - The username of the user
- * @prop {ForemUser} user - Content about a user
- * @prop {ForemPost} latest_post - Content about a post
+ * @function Render a user's post count
+ * @param {number} post_count - number of posts the user has published
  */
-export class DevToProfile extends LitElement {
+export const userPostCount = (post_count) => post_count !== undefined ? html`<p part="mild">
+  ${postSvg} 
+  <span>${post_count} posts published</span>
+</p>
+` : '';
+
+/**
+ * dev.to profile card component
+ * @element devto-profile-card
+ * @prop {ForemUser} user - Content about a user
+ * @prop {ForemPost} [latest_post] - Content about a post
+ */
+export class DevToProfileCard extends LitElement {
   static properties = {
     user: { type: Object },
-    username: { type: String },
     latest_post: { type: Object },
-    skipFetch: { type: Boolean },
   };
   static styles = css`
   ${unsafeCSS(styles)}
     `;
 
-  async firstUpdated() {
-    if (!this.username && this.user?.username) {
-      this.username = this.user.username;
-    }
-    if (this.skipFetch) {
-      if (!this.username) {
-        this._generateError(
-          'A username is required to skip fetching data',
-          'UI requires a name and username at minimum',
-        )
-        return;
-      }
-    } else {
-      if (this.username) {
-        await this._generateUser(this.username);
-      } else {
-        await this._generateUser(null, this.user?.id);
-      }
-    }
-    await this._cleanUserData();
+  constructor() {
+    super();
+    this.error = null;
   }
 
-  /**
-   * Format a date for machine-readability
-   * @param {string} dt 
-   * @returns {string} - the machine-readable value of the date
-   */
-  _formatDate(dt) {
-    const x = new Date(dt);
-    const year = x.getFullYear()
-    const month = String(x.getMonth() + 1).padStart(2, '0')
-    const day = String(x.getDate()).padStart(2, '0')
-  
-    return `${year}-${month}-${day}`
-  }
-
-  async _fetchPosts(username) {
-    const articles = await fetch(`https://dev.to/api/articles/latest?per_page=1000&username=${username?.toLowerCase()}`);
-    const articlesJson = await articles.json();
-    this.user.post_count = this.user.post_count || articlesJson.length;
-    if (articlesJson.length && !this.latest_post) {
-      this.latest_post = articlesJson[0];
-    }
-  }
-
-  async _fetchUserResponse(username, id) {
-    if (!username && id) {
-      return await fetch(`https://dev.to/api/users/${id}`);
-    }
-    return await fetch(`https://dev.to/api/users/by_username?url=${username?.toLowerCase()}`);
-  }
-
-  async _generateError(msg, status) {
-    this.user = {
-      name: msg,
-      status,
-    }
-  }
-
-  async _generateUser(username, id) {
-    const response = await this._fetchUserResponse(username, id);
-    const jsonResponse = await response.json();
-    if (jsonResponse.error) {
-      this._generateError(
-        `User ${username || id} ${jsonResponse.error}`,
-        jsonResponse.error,
-      )
-      return;
-    }
-    this.user = {
-      ...jsonResponse,
-      ...this.user,
-    }
-    if (typeof this.user.post_count !== 'number' || (this.user.post_count > 0 && !this.latest_post)) {
-      await this._fetchPosts(this.user.username);
-    }
+  connectedCallback() {
+    super.connectedCallback();
+    this._cleanUserData();
   }
 
   /**
    * Clean up data to conform to the HTML-expected content model
    */
-  async _cleanUserData() {
+  _cleanUserData() {
+    if (!this.user) {
+      this.error = 'No user data provided';
+      return;
+    }
+    if (!this.user?.username) {
+      this.error = 'Username (user.username) is required';
+      return;
+    }
     this.user.profile_image = this.user.profile_image || blankPng;
     this.user.name = this.user.name || `@${this.user.username}`;
-    if (this.user.joined_at) {
-      this.user.joined = this.user.joined || this._formatDate(this.user.joined_at);
-    }
     if (this.user.post_count && Number(this.user.post_count) !== NaN) {
       this.user.post_count = Number(this.user.post_count);
     } else {
       delete this.user?.post_count;
     }
-    this.latest_post.cover_image = this.latest_post.cover_image || blankPng;
+    if (this.latest_post) {
+      this.latest_post.cover_image = this.latest_post.cover_image || blankPng;
+    }
   }
 
   render() {
-    if (this.user?.status) {
+    if (this.error) {
       return html`
         <section part="container">
           <header>
             <div part="logo">${devLogoSvg}</div>
             
             <p role="heading">
-              <span part="name bold">${this.user?.name}</span>
+              <span part="name bold">${this.error}</span>
             </p>
           </header>
         </section>
       `;
     }
 
-    return when(this.user?.username, () => html`
+    return html`
       <section part="container">
         <header>
           <div part="logo">${devLogoSvg}</div>
@@ -239,23 +214,12 @@ export class DevToProfile extends LitElement {
           </p>
         </header>
         <div part="main">
-          ${when(this.user?.summary, () => html`<p class="summary">${this.user?.summary}</p>`)}
-          ${when(this.user?.joined_at, () => html`<p part="mild">
-            ${joinedSvg} 
-            <span>Joined on 
-              <time datetime="${this.user?.joined}">${this.user?.joined_at}</time>
-            </span>
-          </p>`)}
-          ${when(this.user?.post_count > 0, () => html`
-            <p part="mild">
-              ${postSvg} 
-              <span>${this.user?.post_count} posts published</span>
-            </p>
-          `)}
+          ${userSummary(this.user?.summary)}
+          ${userJoined(this.user?.joined_at)}
+          ${userPostCount(this.user?.post_count)}
           ${when(this.latest_post, () => html`
             <dl>
-              <dt part="mild">Latest post</dt>
-              <dd>${postLink(this.latest_post)}</dd>
+              ${postDescription('Latest post', this.latest_post)}
             </dl>
           `)}
         </div>
@@ -263,8 +227,8 @@ export class DevToProfile extends LitElement {
           <p>${profileLink(this.user)}</p>
         </footer>
       </section>
-    `);
+    `;
   }
 }
 
-customElements.define('dev-user', DevToProfile);
+customElements.define('devto-profile-card', DevToProfileCard);
