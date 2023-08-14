@@ -1,6 +1,6 @@
 
 import './profile-card';
-import { snUserFixture, meowUserFixture, snPostFixture } from './devto.shared-spec';
+import { snUserFixture, snPostFixture } from './devto.shared-spec';
 
 export default {
   title: 'Profile Card',

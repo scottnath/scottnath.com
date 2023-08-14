@@ -10,7 +10,7 @@ const Card = ({ name, cardtype, repository, width, height }) => {
   const classes = `github-card ${cardtype}`;
   return (
     <div className={classes}>
-      <GithubCard name="basskibo" type="user" repository="blogtech_dev" widht={300} height={400} />
+      <GithubCard name={name} type={cardtype} repository={repository} width="break" height="break"></GithubCard>
     </div>
   )
 }

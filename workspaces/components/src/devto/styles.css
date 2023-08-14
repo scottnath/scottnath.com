@@ -96,6 +96,9 @@ p > svg {
   font-size: var(--fs-base);
   font-style: italic;
 }
+.summary {
+  font-style: italic;
+}
 
 :host::part(card) {
   position: relative;
