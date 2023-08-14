@@ -1,6 +1,6 @@
 
 import './profile-card';
-import { snUserFixture, meowUserFixture, snPostFixture } from './devto.shared-spec';
+import { snUserFixture, snPostFixture } from './devto.shared-spec';
 
 export default {
   title: 'Profile Card',
@@ -20,3 +20,13 @@ export const UserWithLatestPost = {
     latest_post: snPostFixture,
   },
 }
+
+export const NoUser = {};
+export const NoUsername = {
+  args: {
+    user: {
+      ...snUserFixture,
+      username: undefined,
+    },
+  },
+};
