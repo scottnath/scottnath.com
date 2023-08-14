@@ -20,3 +20,13 @@ export const UserWithLatestPost = {
     latest_post: snPostFixture,
   },
 }
+
+export const NoUser = {};
+export const NoUsername = {
+  args: {
+    user: {
+      ...snUserFixture,
+      username: undefined,
+    },
+  },
+};

@@ -1,7 +1,6 @@
 import { LitElement, html, css, unsafeCSS } from 'lit';
 import {when} from 'lit/directives/when.js';
 
-// import stylesDep from './style.css'
 import styles from './styles.css?inline'
 
 /**
@@ -50,6 +49,11 @@ export const formatDate = (dt) => {
 }
 
 /**
+ * Container for the dev.to logo
+ */
+export const logoContainer = html`<div part="logo">${devLogoSvg}</div>`;
+
+/**
  * Content about one post by dev.to (or Forem) user, sourced from the Forem API.
  * @see https://developers.forem.com/api/v1#tag/articles/operation/getLatestArticles
  * @typedef {Object} ForemPost
@@ -72,7 +76,7 @@ ${post.title}</a>`;
  * @param {ForemPost} post - Content about a post
  */
 const postDescription = (term, post) => post ? html`
-<dt part="mild">${term}</dt>
+<dt>${term}</dt>
 <dd>${postLink(post)}</dd>
 ` : '';
 
@@ -105,7 +109,7 @@ const profileLink = (user) => html`
  * Render a user's avatar
  * @param {ForemUser} user - Content about a user
  */
-const userAvatar = (user) => html`<img src="${user?.profile_image}" part="avatar" alt="Avatar for ${user?.name}" loading="lazy" />`;
+const avatarImg = (user) => html`<img src="${user?.profile_image}" part="avatar" alt="Avatar for ${user?.name}" loading="lazy" />`;
 
 /**
  * @function Render a user's summary content
@@ -117,7 +121,7 @@ export const userSummary = (summary) => summary ? html`<p class="summary">${summ
  * @function Render a user's joined date
  * @param {string} joined_at - date the user joined
  */
-export const userJoined = (joined_at) => joined_at ? html`<p part="mild">
+export const userJoined = (joined_at) => joined_at ? html`<p>
 ${joinedSvg} 
 <span>Joined on 
   <time datetime="${formatDate(joined_at)}">${joined_at}</time>
@@ -129,7 +133,7 @@ ${joinedSvg}
  * @function Render a user's post count
  * @param {number} post_count - number of posts the user has published
  */
-export const userPostCount = (post_count) => post_count !== undefined ? html`<p part="mild">
+export const userPostCount = (post_count) => post_count !== undefined ? html`<p>
   ${postSvg} 
   <span>${post_count} posts published</span>
 </p>
@@ -187,12 +191,12 @@ export class DevToProfileCard extends LitElement {
   render() {
     if (this.error) {
       return html`
-        <section part="container">
+        <section part="card">
           <header>
-            <div part="logo">${devLogoSvg}</div>
+            ${logoContainer}
             
             <p role="heading">
-              <span part="name bold">${this.error}</span>
+              <span part="name">${this.error}</span>
             </p>
           </header>
         </section>
@@ -200,18 +204,18 @@ export class DevToProfileCard extends LitElement {
     }
 
     return html`
-      <section part="container">
+      <section part="card">
         <header>
-          <div part="logo">${devLogoSvg}</div>
+          ${logoContainer}
           
-          <p role="heading">
+          <address role="heading">
             <a href="https://dev.to/${this.user?.username}">
-              <span part="avatar-container">
-                ${userAvatar(this.user)}
+              <span part="avatar">
+                ${avatarImg(this.user)}
               </span>
-              <span part="name bold">${this.user?.name}</span>
+              <span part="name">${this.user?.name}</span>
             </a>
-          </p>
+          </address>
         </header>
         <div part="main">
           ${userSummary(this.user?.summary)}
@@ -224,7 +228,7 @@ export class DevToProfileCard extends LitElement {
           `)}
         </div>
         <footer>
-          <p>${profileLink(this.user)}</p>
+          ${profileLink(this.user)}
         </footer>
       </section>
     `;

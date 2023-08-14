@@ -1,0 +1,26 @@
+
+/** styles from primer? */
+:host {
+  --ff-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  --base-size-8: 0.5em;
+  --base-size-16: 1em;
+  --base-size-32: 2em;
+}
+
+:host {
+  /* in theory, dark default */
+  --color-scale-gray-0: #f0f6fc;
+  --color-fg-muted: #7d8590;
+  --color-accent-fg: #2f81f7;
+  --color-border-default: #30363d;
+  --color-canvas-default: #0d1117;
+}
+
+:host {
+  /* local component colors */
+
+  --color-base: var(--color-scale-gray-0);
+  --color-mild: var(--color-fg-muted);
+  --color-bold: var(--base-90);
+  --color-link: var(--color-accent-fg);
+}

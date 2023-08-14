@@ -1,0 +1,105 @@
+:host {
+
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+  --grey-100: 245, 245, 245;
+  --grey-900: 23, 23, 23;
+  --indigo-600: 79, 70, 229;
+  --indigo-700: 67, 56, 202;
+  --base-60: #717171;
+  --base-70: #575757;
+  --base-90: #242424;
+  --radius: 0.375em;
+
+  --body-bg: rgb(var(--grey-100));
+  --card-bg: rgb(var(--white));
+  
+  --card-color: var(--color-scale-gray-0);
+  --card-color-bold: var(--base-90);
+  --card-shadow-color: rgba(var(--grey-900), 0.05);
+
+
+  --divider: 1px solid var(--body-bg);
+
+  --ff-base: var(--ff-sans-serif);
+
+  --fs-base: 14px;
+  --fs-mild: 0.875em;
+  --fs-bold: 1.25em;
+
+  --fw-base: 500;
+  --fw-mild: 300;
+  --fw-bold: 700;
+
+}
+:host {
+  line-height: 1.5;
+
+  color: var(--color-base);
+  font-family: var(--ff-base);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-base);
+}
+/** root elements cleanup */
+* {
+  padding: 0;
+  margin: 0;
+  margin-inline: 0;
+}
+a {
+  text-decoration: none;
+}
+address {
+  font-style: normal;
+}
+/* BorderBox */
+
+/* TODO: Rename? Nest? */
+.repo {
+  background-color: var(--color-canvas-default);
+  border-color: var(--color-border-default);
+  border-style: solid;
+  border-width: max(1px, 0.0625rem);
+  border-radius: var(--radius);
+  padding: 1em;
+
+  [itemprop="codeRepository"] {
+    display: block;
+
+    > svg {
+      fill: var(--color-mild);
+      vertical-align: text-bottom;
+    }
+    [itemprop="maintainer"], [itemprop="name"] {
+      color: var(--color-link);
+    }
+  }
+
+  [itemprop="about"] {
+    margin-top: .5em;
+    color: var(--color-mild);
+  }
+}
+dl {
+  display: flex;
+  flex: 1 1 auto;
+  color: var(--color-mild);
+  margin-top: .5em;
+
+  > dt {
+    margin-right: .2em;
+    > span {
+      display: none;
+    }
+    > svg {
+      vertical-align: text-bottom;
+    }
+  }
+  > dd {
+    margin-right: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

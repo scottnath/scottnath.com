@@ -7,7 +7,8 @@ export const snUserFixture = {
   name: 'Scott Nath',
   summary: "Front-end Architect",
   joined_at: 'Mar 30, 2023',
-  profile_image: 'https://res.cloudinary.com/practicaldev/image/fetch/s--8gi1l6OI--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1055555/8146c5bb-31d3-4023-a216-5cb5c00ecb3b.jpg',
+  // profile_image: 'https://res.cloudinary.com/practicaldev/image/fetch/s--8gi1l6OI--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1055555/8146c5bb-31d3-4023-a216-5cb5c00ecb3b.jpg',
+  profile_image: './multi-face-image.jpeg',
   joined: '2023-03-30',
   post_count: 8
 }
