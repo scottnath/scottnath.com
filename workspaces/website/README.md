@@ -6,7 +6,7 @@
 
 [ ] get astro-icons working
 [ ] convert resume to web-component/lit
-[ ] make repo a workspace with separate component library and astro site
 [ ] add linter
-[ ] make work with testing-library at least
+[ ] make work with testing-library
 [ ] need favicon
+[ ] add github graph: https://github.com/enpitsuLin/wc-github-graph/blob/master/README.md
