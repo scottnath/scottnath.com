@@ -1,0 +1,11 @@
+---
+import { getGitHubUser, getGitHubRepos } from '../utils/github'
+const user = await getGitHubUser();
+const repos = await getGitHubRepos(['scottnath/profile-components', 'storydocker/storydocker']);
+const repositories = JSON.stringify(repos)
+---
+<script>
+  import "profile-components/github-user.js";
+</script>
+<github-user {...user} repos={repositories}></github-user>
+

@@ -2,19 +2,15 @@
 import { DevToProfileCard } from 'scottnath-components/src/devto/profile-card';
 import { getUserContent } from 'scottnath-components/src/devto/get-devto-user';
 
-import { GitHubProfileCard } from 'scottnath-components/src/github/card';
-import { getGitHubContent } from 'scottnath-components/src/github/get-github-data';
-
+import GitHubUser from '../components/GitHubUser.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import linkedinLogo from '~/assets/logos/linkedin.svg';
-import githubLogo from '~/assets/logos/github.svg';
 import mastodonLogo from '~/assets/logos/Mastodon.svg';
 
 const { user, posts } = await getUserContent('scottnath');
-const { ghUser, repos } = await getGitHubContent('scottnath', ['storydocker/storydocker', 'scottnath/scottnath.com'])
 ---
 
 <!DOCTYPE html>
@@ -34,9 +30,10 @@ const { ghUser, repos } = await getGitHubContent('scottnath', ['storydocker/stor
 				<li><a href="https://www.linkedin.com/in/scottnath"><img src={linkedinLogo.src} alt="LinkedIn logo" /> LinkedIn</a></li>
 				<li><a rel="me" href="https://mastodon.social/@scottnath"><img src={mastodonLogo.src} alt="Mastodon logo" /> Mastodon</a></li>
 			</ul>
+      
       <ul class="social-cards">
+        <li><GitHubUser /></li>
         <li><DevToProfileCard user={user} latest_post={posts[0]}></DevToProfile></li>
-        <li><GitHubProfileCard user={ghUser} repos={repos}></GitHubProfileCard></li>
       </ul>
 		</main>
 		<Footer />
