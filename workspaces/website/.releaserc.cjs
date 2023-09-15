@@ -1,4 +1,4 @@
-import config, { releaseRules } from 'storydocker-utilities/.releaserc.mjs';
+const config = require('storydocker-utilities/releases');
 
 const plugins = config.plugins.map(plugin => {
   if (Array.isArray(plugin) && plugin[0] === 'semantic-release-gitmoji') {
@@ -6,7 +6,6 @@ const plugins = config.plugins.map(plugin => {
       'semantic-release-gitmoji',
       {
         tagFormat: 'scottnath-dot-com@v${version}',
-        releaseRules,
       }
     ];
   }
@@ -15,7 +14,7 @@ const plugins = config.plugins.map(plugin => {
 }).filter(plugin => plugin !== undefined);
 
 
-export default {
+module.exports = {
   ...config,
   plugins
 };

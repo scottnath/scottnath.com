@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "website dev environment with a component library",
   "main": "index.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/scottnath/scottnath.com.git"
