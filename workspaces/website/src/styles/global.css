@@ -91,6 +91,11 @@ blockquote {
 	font-style: italic;
 }
 
+main {
+  container-name: main;
+  container-type: inline-size;
+}
+
 .title {
 	margin: 0.25em 0 0;
 }
@@ -187,42 +192,17 @@ ul.social-cards {
   flex-wrap: wrap;
   gap: .5em;
   list-style-type: none;
-}
-@media (min-width: 600px) {
-  ul.social-cards:has(li:nth-of-type(2):last-child) li {
-    width: calc(100% / 2 - .5em);
+  container-name: socials;
+  container-type: inline-size;
+
+  > li {
+    flex: 1 1 100%;
+    margin: 0;
+    padding: 0;
   }
 }
-/* dl.social-cards:has(dd:nth-of-type(3):last-child) dd {
-  width: calc(100% / 3 - .5em);
-} */
-
-
-.github-card {
-  line-height: 1.13em;
-}
-.github-card > div {
-  background-color: white !important;
-  color: #575757 !important;
-  border: 1px solid #ddd;
-}
-.github-card p {
-  line-height: 1.2em;
-}
-.github-card p:nth-of-type(2)::before {
-  content: url('~/assets/logos/github.svg') ' GitHub';
-  display: inline-block;
-  font-size: .9em;
-  margin-right: .3em;
-}
-.github-card a {
-  text-decoration: none;
-  color: #575757 !important;
-}
-.github-card a p,
-.github-card a span {
-  color: #575757 !important;
-}
-.github-card b {
-  color: inherit;
+@container main (min-width: 410px) {
+  ul.social-cards:has(li:nth-of-type(2)) li  {
+    flex: 1 1 49%;
+  }
 }
