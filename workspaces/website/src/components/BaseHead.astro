@@ -15,15 +15,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image = '/placeholder-scottnath.jpeg' } = Astro.props;
 ---
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B00ZXZSE29" type="text/partytown"></script>
-<script type="text/partytown">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-B00ZXZSE29');
-</script>
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
