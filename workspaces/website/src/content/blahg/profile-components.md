@@ -1,13 +1,13 @@
 ---
 title: "Profile Components: display social profiles in native web components"
-description: "Profile-components are a set of web components with zero dependencies that display publically-available profile information from various social networks. Currently two: GitHub and dev.to."
+description: "Profile-components are a set of web components with zero dependencies that display publicly-available profile information from various social networks. Currently two: GitHub and dev.to."
 pubDate: "2023-10-10"
-heroImage: "/profile-components/profile-components-header-prod.jpeg"
+heroImage: "/profile-components-blahg/profile-components-header-prod.jpeg"
 ---
 
-Profile Components is a set of web components with zero dependencies that display publically-available profile information from various social networks. Currently two: GitHub and dev.to.
+Profile Components is a set of web components with zero dependencies that display publicly-available profile information from various social networks. Currently two: GitHub and dev.to.
 
-Being native web components, these can be used in any HTML page, framework-based site, or whereever you can use HTML.  They are available via unpkg.com or you can add the npm module to your project.
+Being native web components, these can be used in any HTML page, framework-based site, or wherever you can use HTML.  They are available via unpkg.com or you can add the NPM module to your project.
 
 ## 100% All Natural Features!
 
@@ -37,19 +37,19 @@ use via unpkg.com:
 <!-- add to HEAD -->
 <script 
   type="module" 
-  src="https://unpkg.com/profile-components/dist/github-user.js"></script>
+  src="https://unpkg.com/profile-components-blahg/dist/github-user.js"></script>
 
 <!-- shows a GitHub profile with fetched content for user `scottnath` -->
 <github-user username="scottnath" fetch="true"></github-user>
 ```
 
-install via npm: 
+install via NPM: 
     
     npm i profile-components
 
 links to learn more:
 
-* [profile-components on github](https://github.com/scottnath/profile-components)
+* [profile-components on GitHub](https://github.com/scottnath/profile-components)
 * play with the components in [Storybook](https://scottnath.github.io/profile-components)
 * [See demos on stackblitz](https://stackblitz.com/edit/profile-components)
 
@@ -85,7 +85,7 @@ _note_: future components may need an API key(s), but for now, these use public,
 </td>
 <td>
 
-![Example of GitHub profile component with fetched data](/profile-components/github-dark-scottnath-400px.png)
+![Example of GitHub profile component with fetched data](/profile-components-blahg/github-dark-scottnath-400px.png)
 
 </td>
 </tr>
@@ -111,7 +111,7 @@ avatar_url="/cat-avatar.png"
 </td>
 <td>
 
-![Example of GitHub profile component with local data](/profile-components/github-dark-meowy-400px.png)
+![Example of GitHub profile component with local data](/profile-components-blahg/github-dark-meowy-400px.png)
 
 </td>
 </tr>
@@ -142,7 +142,7 @@ Stylesheets have their styles nested to reduce adding extra classes to the HTML 
 Container queries allow the components to be responsive to their container, not the viewport - a more realistic usage scenario.
 |   |   |
 |---|---|
-| <figure><img src="/profile-components/devto-200px-wide.png" width="200" alt="DEV web component in a 200 pixel wide container" /><figcaption>200px wide container</figcaption></figure>  | <figure><img width="400" src="/profile-components/devto-400px-wide.png" alt="DEV web component in a 400 pixel wide container" /><figcaption>400px wide container</figcaption></figure>  |
+| <figure><img src="/profile-components-blahg/devto-200px-wide.png" width="200" alt="DEV web component in a 200 pixel wide container" /><figcaption>200px wide container</figcaption></figure>  | <figure><img width="400" src="/profile-components-blahg/devto-400px-wide.png" alt="DEV web component in a 400 pixel wide container" /><figcaption>400px wide container</figcaption></figure>  |
 
 ### Colors and CSS variables sourced from the social network
 
@@ -206,7 +206,7 @@ These components are tested using screen readers and AXE via Storybook. The HTML
 
 For example, in the GitHub component, the header looks like this:
 
-![GitHub component header shows the GitHub logo and the username](/profile-components/github-component-header-scottnath.png)
+![GitHub component header shows the GitHub logo and the username](/profile-components-blahg/github-component-header-scottnath.png)
 
 And the HTML is this:
 
@@ -229,7 +229,7 @@ _note_: The `itemscope` and other `item[thing]` attributes are from [schema.org]
 
 Might as well go all in! **Node 20 shipped with a native test runner**, [node:test](https://nodejs.org/api/test.html). Fairly simple test runner, but it includes code coverage and has all the functionality needed to unit test these components.
 
-The latest unit test runs are visible in the [unit tests GitHub action workflow for profile-components](https://github.com/scottnath/profile-components/actions/workflows/unit-tests.yml)
+The latest unit test runs are visible in the [unit tests GitHub action workflow for profile-components](https://github.com/scottnath/profile-components-blahg/actions/workflows/unit-tests.yml)
 
 
 ## 🎁 bonus! Server Side Rendering cheatcode! <a name="🎁"></a>
