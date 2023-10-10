@@ -1,16 +1,12 @@
 ---
-import { DevToProfileCard } from 'scottnath-components/src/devto/profile-card';
-import { getUserContent } from 'scottnath-components/src/devto/get-devto-user';
-
 import GitHubUser from '../components/GitHubUser.astro';
+import DevToUser from '../components/DevToUser.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import linkedinLogo from '~/assets/logos/linkedin.svg';
 import mastodonLogo from '~/assets/logos/Mastodon.svg';
-
-const { user, posts } = await getUserContent('scottnath');
 ---
 
 <!DOCTYPE html>
@@ -33,7 +29,7 @@ const { user, posts } = await getUserContent('scottnath');
       
       <ul class="social-cards">
         <li><GitHubUser /></li>
-        <li><DevToProfileCard user={user} latest_post={posts[0]}></DevToProfile></li>
+        <li><DevToUser /></li>
       </ul>
 		</main>
 		<Footer />

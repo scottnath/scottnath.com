@@ -8,6 +8,7 @@ const user = github.user;
 const repos = JSON.stringify(['scottnath/profile-components', 'storydocker/storydocker']);
 const userContent = await user.generateContent({
   login: 'scottnath',
+  avatar_url: '/scott-nath-profile-pic.jpeg',
   repos
 },true);
 let userHTML = '<style>' + user.styles + '</style>';

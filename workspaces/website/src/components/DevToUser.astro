@@ -1,0 +1,20 @@
+---
+// @todo: vite, via astro, doesn't support dynamic imports yet
+// @see https://github.com/withastro/astro/issues/8660
+// @future-feature: import { user } from 'profile-components/devto-utils';
+import devto from 'profile-components/devto-utils';
+const user = devto.user;
+
+const userContent = await user.generateContent({
+  username: 'scottnath',
+  profile_image: '/scott-nath-profile-pic.jpeg'
+},true);
+let userHTML = '<style>' + user.styles + '</style>';
+userHTML += user.html(userContent);
+---
+
+<devto-user>
+  <template shadowrootmode="open" set:html={userHTML}>
+  </template>
+</devto-user>
+
