@@ -12,7 +12,7 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/placeholder-scottnath.jpeg' } = Astro.props;
+const { title, description, image = '/scott-nath-profile-pic.jpeg' } = Astro.props;
 ---
 <script defer data-domain="scottnath.com" src="https://plausible.io/js/script.js" type="text/partytown"></script>
 
@@ -20,7 +20,7 @@ const { title, description, image = '/placeholder-scottnath.jpeg' } = Astro.prop
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/favicon-mind-blown.ico" id="favicon" />
 <meta name="generator" content={Astro.generator} />
 <link rel="preload" as="image" href="/scott-nath-profile-pic.jpeg" />
 
@@ -45,3 +45,21 @@ const { title, description, image = '/placeholder-scottnath.jpeg' } = Astro.prop
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<script>
+  // triggers a different favicon when the user switches tabs
+  const onVisibilityChange=()=>{
+    const faviconTag=document.querySelector('#favicon');
+    if(document.hidden){
+      const initialFavicon=faviconTag?.href;
+      document.initialFavicon=initialFavicon;
+      faviconTag.href="/favicon-clown.ico";
+    } else {
+      if(document.initialFavicon!==""){
+        faviconTag.href=document.initialFavicon;
+      }
+    }
+  };
+  document.addEventListener("visibilitychange",onVisibilityChange,true);
+  document.initialFavicon=document.querySelector('#favicon').href;
+</script>
