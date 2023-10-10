@@ -1,11 +1,21 @@
 ---
-import { getGitHubUser, getGitHubRepos } from '../utils/github'
-const user = await getGitHubUser();
-const repos = await getGitHubRepos(['scottnath/profile-components', 'storydocker/storydocker']);
-const repositories = JSON.stringify(repos)
+// @todo: vite, via astro, doesn't support dynamic imports yet
+// @see https://github.com/withastro/astro/issues/8660
+// @future-feature: import { user } from 'profile-components/github-utils';
+import github from 'profile-components/github-utils';
+const user = github.user;
+
+const repos = JSON.stringify(['scottnath/profile-components', 'storydocker/storydocker']);
+const userContent = await user.generateContent({
+  login: 'scottnath',
+  repos
+},true);
+let userHTML = '<style>' + user.styles + '</style>';
+userHTML += user.html(userContent);
 ---
-<script>
-  import "profile-components/github-user.js";
-</script>
-<github-user {...user} repos={repositories}></github-user>
+
+<github-user>
+  <template shadowrootmode="open" set:html={userHTML}>
+  </template>
+</github-user>
 
