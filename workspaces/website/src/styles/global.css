@@ -89,6 +89,9 @@ blockquote {
 	margin: 0px;
 	font-style: italic;
 }
+figure {
+  margin: 0;
+}
 
 main {
   container-name: main;
