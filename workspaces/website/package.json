@@ -14,7 +14,7 @@
     "site-files": "npm run 404file && npm run jekyllfile && npm run cname"
   },
   "dependencies": {
-    "@astrojs/lit": "^3.0.1",
+    "@astrojs/lit": "^3.0.2",
     "@astrojs/mdx": "^1.1.1",
     "@astrojs/react": "^3.0.3",
     "@astrojs/rss": "^3.0.0",
