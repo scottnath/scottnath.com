@@ -26,7 +26,7 @@
     "astro": "^3.2.3",
     "lit": "^2.8.0",
     "marked": "^9.1.0",
-    "profile-components": "^0.2.1",
+    "profile-components": "^0.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.2.2"
