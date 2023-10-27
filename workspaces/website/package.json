@@ -14,19 +14,19 @@
     "site-files": "npm run 404file && npm run jekyllfile && npm run cname"
   },
   "dependencies": {
-    "@astrojs/lit": "^3.0.1",
-    "@astrojs/mdx": "^1.1.1",
-    "@astrojs/react": "^3.0.3",
+    "@astrojs/lit": "^3.0.2",
+    "@astrojs/mdx": "^1.1.3",
+    "@astrojs/react": "^3.0.4",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.1",
-    "@types/react": "^18.2.27",
-    "@types/react-dom": "^18.2.12",
+    "@astrojs/sitemap": "^3.0.2",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "airtable": "^0.12.2",
     "astro": "^3.2.3",
-    "lit": "^2.8.0",
-    "marked": "^9.1.0",
-    "profile-components": "^0.2.4",
+    "lit": "^3.0.0",
+    "marked": "^9.1.2",
+    "profile-components": "^0.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.2.2"
@@ -38,7 +38,7 @@
     "astro-icon": "^0.8.1",
     "postcss-nested": "^6.0.1",
     "prop-types": "^15.8.1",
-    "sass": "^1.69.1",
-    "vite": "^4.4.11"
+    "sass": "^1.69.5",
+    "vite": "^4.5.0"
   }
 }
