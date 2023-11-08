@@ -34,7 +34,7 @@
   "devDependencies": {
     "@astrojs/partytown": "^2.0.1",
     "@storybook/testing-library": "^0.2.2",
-    "@testing-library/react": "^14.0.0",
+    "@testing-library/react": "^14.1.0",
     "astro-icon": "^0.8.1",
     "postcss-nested": "^6.0.1",
     "prop-types": "^15.8.1",
