@@ -2,8 +2,8 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Scott Nath';
-export const SITE_SUBTITLE = 'Front-end UI DevOps architect, full-stack software engineer, and team lead.';
-export const SITE_DESCRIPTION = `${SITE_SUBTITLE} Extensive experience creating UI development systems with a focus on where developers and designers collaborate.`;
+export const SITE_SUBTITLE = 'Front-end architect';
+export const SITE_DESCRIPTION = `${SITE_SUBTITLE}, full-stack software engineer, and developer advocate. Extensive experience creating UI development systems with a focus on where developers and designers collaborate.`;
 
 export const RESUME_DEFUALTS = {
   name: SITE_TITLE,

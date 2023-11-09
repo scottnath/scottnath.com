@@ -1,23 +1,156 @@
 ---
+import DopeStripesHTML from 'scottnath-components/src/dope-stripes/html.js';
+import DopeStripesStyles from 'scottnath-components/src/dope-stripes/style.css?inline';
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, SITE_SUBTITLE } from '../consts';
+import profilePic from '~/assets/scott-nath-profile-photo.jpeg';
+import devLogo from '~/assets/logos/dev.svg';
+import githubLogo from '~/assets/logos/github-inverse.svg';
+import linkedinLogo from '~/assets/logos/linkedin.svg';
+import mastodonLogo from '~/assets/logos/Mastodon.svg';
+
+let stripesHTML = '<style>' + DopeStripesStyles + '</style>';
+stripesHTML += DopeStripesHTML(['#ffd273', '#ffbf57', '#ffa43b', '#ff8920', '#ff6e05']);
 ---
 
 <header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blahg">Blahg</HeaderLink>
-		<HeaderLink href="/resume">Resume</HeaderLink>
-	</nav>
+  <dope-stripes>
+    <template shadowrootmode="open" set:html={stripesHTML}>
+    </template>
+  </dope-stripes>
+  <div class="content">
+    <h2>
+      {SITE_TITLE}
+    </h2>
+    <h3>{SITE_SUBTITLE}</h3>
+    <img src={profilePic.src} alt="Scott Nath picture" width="400" height="400" class="avatar" />
+    <nav>
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blahg">Blahg</HeaderLink>
+      <HeaderLink href="/resume">Resume</HeaderLink>
+    </nav>        
+
+    <address class="socials" aria-label="Also find me on these sites">
+      <a rel="me" href="https://dev.to/scottnath"><img src={devLogo.src} alt="DEV logo" /><span>DEV</span></a>
+      <a rel="me" href="https://github.com/scottnath"><img src={githubLogo.src} alt="GitHub logo" /><span>GitHub</span></a>
+      <a rel="me" href="https://www.linkedin.com/in/scottnath"><img src={linkedinLogo.src} alt="LinkedIn logo" /><span>LinkedIn</span></a>
+      <a rel="me" href="https://mastodon.social/@scottnath"><img src={mastodonLogo.src} alt="Mastodon logo" /><span>Mastodon</span></a>
+    </address>
+  </div>
 </header>
 <style>
 	header {
-		margin: 0em 0 2em;
+    --spacing: .5em;
+		margin: .5em 0 1em;
+    height: 9em;
+
+    & .content {
+      padding: 0 var(--spacing);
+      position: relative;
+      height: 100%;
+    }
 	}
+
+  dope-stripes {
+    position: absolute;
+    width: 100%;
+  }
+  dope-stripes::part(stripes) {
+    --left-width: 7em;
+    --angle-width: 73px;
+    --stripe-height: 16px;
+    --stripe-angle: 20deg;
+  }
 	h2 {
-		margin: 0.5em 0;
+		margin: 0;
+    padding-top: 3.3em;
 	}
+  h3 {
+    position: absolute;
+    top: 0;
+    right: var(--spacing);
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+  }
+  nav {
+    position: absolute;
+    left: var(--spacing);
+    bottom: var(--spacing);
+  }
+  @media (min-width: 500px) {
+    nav {
+      top: 0;
+      left: 11.5em;
+      bottom: auto;
+    }
+  }
+  address.socials {
+    font-style: normal;
+    position: absolute;
+    right: var(--spacing);
+    bottom: 1em;
+    
+    & a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--color-link);
+      & img {
+        margin-right: .3em;
+        width: 1em;
+        height: 1em;
+        vertical-align: text-top;
+      }
+      & span {
+        clip: rect(0px, 0px, 0px, 0px);
+        clip-path: inset(50%);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+      }
+      @media (min-width: 500px) {
+        & span {
+          position: relative;
+          margin: auto;
+          width: auto;
+          height: auto;
+          clip-path: none;
+          clip:auto;
+          font-size: var(--font-size-light);
+          padding-right: .75em;
+          color: #fff;
+        }
+      }
+    }
+  }
+  ul.socials li {
+    margin-left: 10px;
+    margin: .6em 1em;
+  }
+  ul.socials li a,
+  ul.socials li a:visited {
+    text-decoration: none;
+  }
+  ul.socials li a img {
+    margin-right: .2em;
+    width: 1em;
+    height: 1em;
+    vertical-align: text-top;
+  }
+  .avatar {
+    width: 100%;
+    max-width: 66px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    top: 0.3em;
+    left: 2em;
+    box-shadow: 0px 0px 2px 2px #fff;
+  }
 </style>

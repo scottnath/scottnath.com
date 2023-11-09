@@ -3,12 +3,13 @@
 // @see https://github.com/withastro/astro/issues/8660
 // @future-feature: import { user } from 'profile-components/github-utils';
 import github from 'profile-components/github-utils';
+import profilePic from '~/assets/scott-nath-profile-photo.jpeg';
 const user = github.user;
 
 const repos = JSON.stringify(['scottnath/profile-components', 'storydocker/storydocker']);
 const userContent = await user.generateContent({
   login: 'scottnath',
-  avatar_url: '/scott-nath-profile-pic.jpeg',
+  avatar_url: profilePic.src,
   repos
 },true);
 let userHTML = '<style>' + user.styles + '</style>';

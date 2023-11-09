@@ -1,25 +1,7 @@
 
 
-.with-conic-gradient {
-	--angle: 0deg;
-  border-style: solid;
-  border-width: 2px;
-  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+.resume {
 	padding: 1em;
-
-	animation: 10s rotate linear infinite;
-}
-
-@keyframes rotate {
-	to {
-		--angle: 360deg;
-	}
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
 }
 
 .print-show {
@@ -79,13 +61,15 @@
 }
 .resume__section {
   background-color: #fff;
+  color: var(--bg-color-normal);
   margin: 1em auto;
   padding: 1em;
   border-radius: .5em;
-  overflow: hidden
+  overflow: hidden;
 }
 .resume__section .title {
   font-weight: 300;
+  color: var(--bg-color-normal)
 }
 
 a.title-link svg,

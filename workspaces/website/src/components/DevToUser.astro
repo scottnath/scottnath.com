@@ -3,17 +3,26 @@
 // @see https://github.com/withastro/astro/issues/8660
 // @future-feature: import { user } from 'profile-components/devto-utils';
 import devto from 'profile-components/devto-utils';
+import profilePic from '~/assets/scott-nath-profile-photo.jpeg';
 const user = devto.user;
+
+const popularPost = {
+  "title": "Running a local multi-framework composition Storybook",
+  "url": "https://dev.to/scottnath/running-a-local-multi-framework-composition-storybook-506l",
+  "cover_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--vyFzl9Ml--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jv4luam96ya9sxsjotjx.png",
+  "social_image": "https://res.cloudinary.com/practicaldev/image/fetch/s--HJA-rw9l--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/jv4luam96ya9sxsjotjx.png",
+}
 
 const userContent = await user.generateContent({
   username: 'scottnath',
-  profile_image: '/scott-nath-profile-pic.jpeg'
+  profile_image: profilePic.src,
+  popular_post: popularPost,
 },true);
 let userHTML = '<style>' + user.styles + '</style>';
 userHTML += user.html(userContent);
 ---
 
-<devto-user>
+<devto-user data-theme="dark">
   <template shadowrootmode="open" set:html={userHTML}>
   </template>
 </devto-user>
