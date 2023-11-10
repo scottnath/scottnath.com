@@ -14,31 +14,31 @@
     "site-files": "npm run 404file && npm run jekyllfile && npm run cname"
   },
   "dependencies": {
-    "@astrojs/lit": "^3.0.1",
-    "@astrojs/mdx": "^1.1.1",
-    "@astrojs/react": "^3.0.3",
+    "@astrojs/lit": "^3.0.3",
+    "@astrojs/mdx": "^1.1.4",
+    "@astrojs/react": "^3.0.4",
     "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.1",
-    "@types/react": "^18.2.27",
-    "@types/react-dom": "^18.2.12",
+    "@astrojs/sitemap": "^3.0.3",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "airtable": "^0.12.2",
-    "astro": "^3.2.3",
-    "lit": "^2.8.0",
-    "marked": "^9.1.0",
-    "profile-components": "^0.2.4",
+    "astro": "^3.5.2",
+    "lit": "^3.0.2",
+    "marked": "^9.1.6",
+    "profile-components": "^0.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^2.0.1",
+    "@astrojs/partytown": "^2.0.2",
     "@storybook/testing-library": "^0.2.2",
-    "@testing-library/react": "^14.0.0",
+    "@testing-library/react": "^14.1.0",
     "astro-icon": "^0.8.1",
     "postcss-nested": "^6.0.1",
     "prop-types": "^15.8.1",
-    "sass": "^1.69.1",
-    "vite": "^4.4.11"
+    "sass": "^1.69.5",
+    "vite": "^4.5.0"
   }
 }
