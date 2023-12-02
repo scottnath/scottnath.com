@@ -9,7 +9,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <SiteWide title={title} description={description} image={heroImage}>
-	<article>
+	<article class="blog-post">
 		{heroImage && <img width="100%" height="auto" src={heroImage} alt="" />}
 		<h1 class="title">{title}</h1>
 		<FormattedDate date={pubDate} />

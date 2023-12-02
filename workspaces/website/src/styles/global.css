@@ -268,3 +268,8 @@ ul.social-cards {
   initial-value: 0deg;
   inherits: false;
 }
+
+.blog-post {
+  max-width: 900px;
+  margin: 0 auto;
+}
