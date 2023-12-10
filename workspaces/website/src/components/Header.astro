@@ -1,6 +1,5 @@
 ---
-import DopeStripesHTML from 'scottnath-components/src/dope-stripes/html.js';
-import DopeStripesStyles from 'scottnath-components/src/dope-stripes/style.css?inline';
+import DopeStripes from './DopeStripes.astro';
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE, SITE_SUBTITLE } from '../consts';
 import profilePic from '~/assets/scott-nath-profile-photo.jpeg';
@@ -9,15 +8,10 @@ import githubLogo from '~/assets/logos/github-inverse.svg';
 import linkedinLogo from '~/assets/logos/linkedin.svg';
 import mastodonLogo from '~/assets/logos/Mastodon.svg';
 
-let stripesHTML = '<style>' + DopeStripesStyles + '</style>';
-stripesHTML += DopeStripesHTML(['#ffd273', '#ffbf57', '#ffa43b', '#ff8920', '#ff6e05']);
 ---
 
 <header>
-  <dope-stripes>
-    <template shadowrootmode="open" set:html={stripesHTML}>
-    </template>
-  </dope-stripes>
+  <DopeStripes id="dope"></DopeStripes>
   <div class="content">
     <h2>
       {SITE_TITLE}
@@ -50,17 +44,6 @@ stripesHTML += DopeStripesHTML(['#ffd273', '#ffbf57', '#ffa43b', '#ff8920', '#ff
       height: 100%;
     }
 	}
-
-  dope-stripes {
-    position: absolute;
-    width: 100%;
-  }
-  dope-stripes::part(stripes) {
-    --left-width: 7em;
-    --angle-width: 73px;
-    --stripe-height: 16px;
-    --stripe-angle: 20deg;
-  }
 	h2 {
 		margin: 0;
     padding-top: 3.3em;

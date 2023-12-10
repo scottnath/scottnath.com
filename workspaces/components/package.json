@@ -14,7 +14,7 @@
   "author": "scottnath",
   "license": "MIT",
   "devDependencies": {
-    "storydocker-storybook": "^0.0.17",
-    "storydocker-utilities": "^0.0.12"
+    "storydocker-storybook": "^0.0.18",
+    "storydocker-utilities": "^0.0.13"
   }
 }

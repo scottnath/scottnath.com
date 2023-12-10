@@ -22,5 +22,8 @@
   "license": "MIT",
   "workspaces": [
     "workspaces/*"
-  ]
+  ],
+  "devDependencies": {
+    "astro": "^4.0.3"
+  }
 }
