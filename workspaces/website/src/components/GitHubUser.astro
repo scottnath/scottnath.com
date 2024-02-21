@@ -1,23 +1,14 @@
 ---
-// @todo: vite, via astro, doesn't support dynamic imports yet
-// @see https://github.com/withastro/astro/issues/8660
-// @future-feature: import { user } from 'profile-components/github-utils';
-import github from 'profile-components/github-utils';
+import {dsd} from 'profile-components/github-utils';
 import profilePic from '~/assets/scott-nath-profile-photo.jpeg';
-const user = github.user;
 
 const repos = JSON.stringify(['scottnath/profile-components', 'storydocker/storydocker']);
-const userContent = await user.generateContent({
+const declaredDOM = await dsd({
   login: 'scottnath',
   avatar_url: profilePic.src,
   repos
-},true);
-let userHTML = '<style>' + user.styles + '</style>';
-userHTML += user.html(userContent);
+},true)
+
 ---
 
-<github-user data-theme="light_high_contrast">
-  <template shadowrootmode="open" set:html={userHTML}>
-  </template>
-</github-user>
-
+<github-user data-theme="light_high_contrast" set:html={declaredDOM}></github-user>
