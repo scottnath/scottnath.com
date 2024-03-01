@@ -22,7 +22,7 @@
     "@types/react-dom": "^18.2.19",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "airtable": "^0.12.2",
-    "astro": "^4.4.2",
+    "astro": "4.4.2",
     "marked": "^12.0.0",
     "profile-components": "^0.3.0",
     "react": "^18.2.0",
