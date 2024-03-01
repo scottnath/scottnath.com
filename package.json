@@ -24,6 +24,6 @@
     "workspaces/*"
   ],
   "devDependencies": {
-    "astro": "^4.4.8"
+    "astro": "^4.4.2"
   }
 }
