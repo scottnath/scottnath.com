@@ -12,6 +12,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<article class="blog-post">
 		{heroImage && <img width="100%" height="auto" src={heroImage} alt="" />}
 		<h1 class="title">{title}</h1>
+    <p>{description}</p>
 		<FormattedDate date={pubDate} />
 		{
 			updatedDate && (
