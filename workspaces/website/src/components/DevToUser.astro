@@ -2,17 +2,9 @@
 import {dsd} from 'profile-components/devto-utils';
 import profilePic from '~/assets/scott-nath-profile-photo.jpeg';
 
-const latest_post = {
-  "title": "Profile Components: SSR with Declarative Shadow DOM",
-  "url": "https://dev.to/scottnath/profile-components-ssr-with-declarative-shadow-dom-2c3n",
-  "cover_image": "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwmujk00v1fy0vh6jr9ck.png",
-  "social_image": "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwmujk00v1fy0vh6jr9ck.png",
-}
-
 const declaredDOM = dsd({
   username: 'scottnath',
   profile_image: profilePic.src,
-  latest_post: latest_post,
 },true);
 ---
 
