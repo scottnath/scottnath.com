@@ -1,8 +1,7 @@
 ---
 import DopeStripes from './DopeStripes.astro';
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE, SITE_SUBTITLE } from '../consts';
-import profilePic from '~/assets/scott-nath-profile-photo.jpeg';
+import { SITE_TITLE, SITE_SUBTITLE, PROFILE_PIC } from '../consts';
 import devLogo from '~/assets/logos/dev.svg';
 import githubLogo from '~/assets/logos/github-inverse.svg';
 import linkedinLogo from '~/assets/logos/linkedin.svg';
@@ -17,7 +16,7 @@ import mastodonLogo from '~/assets/logos/Mastodon.svg';
       {SITE_TITLE}
     </h2>
     <h3>{SITE_SUBTITLE}</h3>
-    <img src={profilePic.src} alt="Scott Nath picture" width="400" height="400" class="avatar" />
+    <img src={PROFILE_PIC} alt="Scott Nath picture" width="400" height="400" class="avatar" />
     <nav>
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blahg">Blahg</HeaderLink>

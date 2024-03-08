@@ -3,6 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import '../components/resume/styles/resume.css';
+import { PROFILE_PIC } from '../consts';
 
 export interface Props {
 	title: string;
@@ -12,10 +13,10 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/scott-nath-profile-pic.jpeg' } = Astro.props;
+const { title, description, image = PROFILE_PIC } = Astro.props;
 ---
 <script defer data-domain="scottnath.com" src="https://plausible.io/js/script.js" type="text/partytown"></script>
-<script type="text/partytown" defer data-domain="scottnath.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script defer data-domain="scottnath.com" src="https://plausible.io/js/script.outbound-links.js" type="text/partytown"></script>
 
 
 
@@ -24,7 +25,7 @@ const { title, description, image = '/scott-nath-profile-pic.jpeg' } = Astro.pro
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" href="/favicon-mind-blown.ico" id="favicon" />
 <meta name="generator" content={Astro.generator} />
-<link rel="preload" as="image" href="/scott-nath-profile-pic.jpeg" />
+<link rel="preload" as="image" href={image} />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

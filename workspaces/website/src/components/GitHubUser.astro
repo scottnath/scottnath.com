@@ -1,11 +1,11 @@
 ---
 import {dsd} from 'profile-components/github-utils';
-import profilePic from '~/assets/scott-nath-profile-photo.jpeg';
+import { PROFILE_PIC } from '../consts';
 
 const repos = JSON.stringify(['scottnath/profile-components', 'storydocker/storydocker']);
 const declaredDOM = await dsd({
   login: 'scottnath',
-  avatar_url: profilePic.src,
+  avatar_url: PROFILE_PIC,
   repos
 },true)
 

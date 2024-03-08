@@ -4,6 +4,8 @@
 export const SITE_TITLE = 'Scott Nath';
 export const SITE_SUBTITLE = 'Front-end architect';
 export const SITE_DESCRIPTION = `${SITE_SUBTITLE}, full-stack software engineer, and developer advocate. Extensive experience creating UI development systems with a focus on where developers and designers collaborate.`;
+// image must be in root of public folder
+export const PROFILE_PIC = '/scott-nath-profile-photo.avif';
 
 export const RESUME_DEFUALTS = {
   name: SITE_TITLE,
