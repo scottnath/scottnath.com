@@ -12,7 +12,8 @@
     "start": "npm run start -w workspaces/website",
     "build": "npm run build -w workspaces/website",
     "preview": "npm run preview -w workspaces/website",
-    "site-files": "npm run site-files -w workspaces/website"
+    "site-files": "npm run site-files -w workspaces/website",
+    "storybook": "npm run storybook -w workspaces/components"
   },
   "keywords": [
     "scottnath",

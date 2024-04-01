@@ -1,55 +1,23 @@
-.stripes {
-  width: 100%;
-  --left-width: 20%;
-  --angle-width: 50px;
-  --stripe-height: 20px;
-  --stripe-angle: 39deg;
-}
-
-.stripe {
-  display: flex;
-  align-items: left;
-  margin: 0 0 -1px;
-  width: 100%;
+:host {
+  display: block;
+  position: relative;
+  --angle-x-start: 35%;
+  --angle-width: 5%;
+  --angle-y-end: 40px;
+  --stripe-height: 16px;
   --stripe-color: #ffe27a;
-
-  & span,
-  &::before,
-  &::after {
-    content: " ";
-    height: var(--stripe-height);
-    display: block;
-    background-color: var(--stripe-color);
-    --rotated-height: calc(var(--angle-width) * tan(var(--stripe-angle)));
+  width: 100%;
+  min-height: var(--stripe-height);
+}
+::slotted(dope-stripe),
+dope-stripe {
+  --no-top-margin: -1;
+}
+dope-stripe:first-child {
+  --no-top-margin: 0;
+}
+.stripes:not(:has(dope-stripe)) {
+  ::slotted(dope-stripe:first-child) {
+    --no-top-margin: 0;
   }
-}
-
-.stripe span {
-  transform: skewY(var(--stripe-angle));
-  transform-origin: 0% 0%;
-  flex: 0 0 auto;
-  width: calc(var(--angle-width));
-  height: var(--stripe-height);
-}
-.stripe::before {
-  width: var(--left-width);
-  flex: 0 0 auto;
-}
-.stripe::after {
-  flex: 1 1 auto;
-  transform: translate(0, var(--rotated-height));
-}
-.blue {
-  --stripe-color: rgb(0, 0, 255);
-}
-.yellow {
-  --stripe-color: #ffe27a;
-}
-
-.orange {
-  --stripe-color: #ffa64d;
-}
-
-.dark-orange {
-  --stripe-color: #ff7f1a;
 }

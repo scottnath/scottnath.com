@@ -1,38 +1,73 @@
 import styles from './style.css?inline';
-import html from './html.js';
+// import stripes from './html.js';
+import { LitElement, html, css, unsafeCSS } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import './stripe';
 
 /**
  * @element dope-stripes
  * @attr {string[]} stripes - An array of colors to use for the stripes
  */
-export class DopeStripes extends HTMLElement {
-  constructor() {
-    super();
-    this.attrs = {};
-    this.attachShadow({ mode: "open" });
-    this._getAttributes();
-  }
-
-  /**
-   * Generate variables at `this.[attribute-name]` for each attribute on the element
-   * @ignore
-   */
-  _getAttributes() {
-    for (let name of this.getAttributeNames()) {
-      if (this.getAttribute(name)) {
-        this.attrs[name] = this.getAttribute(name);
+export class DopeStripes extends LitElement {
+  static styles = css`${unsafeCSS(styles)}`;
+  static properties = {
+    stripes: {
+      type: Array,
+      attribute: "stripes",
+      converter: (value, type) => {
+        return value.split(",");
       }
     }
-    if (this.attrs.stripes && typeof this.attrs.stripes === 'string') {
-      this.attrs.stripes = this.attrs.stripes.split(',');
+  };
+  
+
+  get _slottedChildren() {
+    const slot = this.shadowRoot.querySelector("slot");
+    const childNodes = slot?.assignedNodes({ flatten: true });
+    if (!childNodes) {
+      return [];
     }
+    return Array.prototype.filter.call(
+      childNodes,
+      (node) => node.nodeType == Node.ELEMENT_NODE
+    );
   }
 
-  async connectedCallback() {
-    this.setAttribute( 'exportparts', ['stripes'] );
-    let view = `<style>${styles}</style>`;
-    view += html(this.attrs.stripes);
-    this.shadowRoot.innerHTML = view;
+  get _colorChildren() {
+    const children = this.shadowRoot.querySelectorAll(".color-stripe");
+    if (!children) {
+      return [];
+    }
+    return Array.prototype.filter.call(
+      children,
+      (node) => node.nodeType == Node.ELEMENT_NODE
+    );
+  }
+
+  firstUpdated() {
+    let zindex = 1;
+    if (this._slottedChildren.length > 0) {
+      this._slottedChildren.reverse().forEach((node) => {
+        node.style.zIndex = zindex++;
+      });
+    }
+    if (this._colorChildren.length > 0) {
+      this._colorChildren.reverse().forEach((node) => {
+        node.style.zIndex = zindex++;
+      });
+    }
+  }
+  
+  constructor() {
+    super();
+    this.stripes = [];
+  }
+  render() {
+    const colorStripes = this.stripes.filter(color => color !== 'undefined').map((color) => html`<dope-stripe class="color-stripe" color=${color}></dope-stripe>`);
+    return html`<div class="stripes" part="stripes" exportparts="stripe">
+      ${colorStripes}
+      <slot></slot>
+  </div>`;
   }
 }
 
