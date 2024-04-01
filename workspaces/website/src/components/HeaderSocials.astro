@@ -1,0 +1,65 @@
+---
+import { SOCIALS } from '~/consts';
+---
+
+<address class="socials" aria-label="Also find me on these sites">
+  {SOCIALS.map(({ title, url, logo, label }) => (
+    <a rel="me" href={url} aria-label={label}><img src={logo.src} alt={`${title} logo`} aria-hidden="true" /><span>{title}</span></a>
+  ))}
+</address>
+
+<style>
+  address.socials {
+    font-style: normal;
+    
+    & a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--color-link);
+      & img {
+        margin-inline-end: var(--spacing);
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+      }
+      &:last-child {
+        & img {
+          margin-inline-end: 0;
+        }
+      }
+      & span {
+        clip: rect(0px, 0px, 0px, 0px);
+        clip-path: inset(50%);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+      }
+      @media (min-width: 500px) {
+        & img {
+          width: 1.2em;
+          height: 1.2em;
+        }
+        & span {
+          position: relative;
+          margin: auto;
+          width: auto;
+          height: auto;
+          clip-path: none;
+          clip:auto;
+          font-size: var(--font-size-light);
+          padding-right: .75em;
+          color: #fff;
+        }
+        &:last-child {
+          & span {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+</style>

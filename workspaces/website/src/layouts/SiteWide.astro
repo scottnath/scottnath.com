@@ -6,14 +6,16 @@ import Footer from '../components/Footer.astro';
 const { title, description, image } = Astro.props;
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 	<head>
 		<BaseHead title={title} description={description} image={image} />
 	</head>
 
 	<body>
+    <a href="#main" id="skip-to-main">Skip to main content</a>
 		<Header />
-		<main transition:animate="slide">
+		<main transition:animate="slide" id="main">
       <slot />
 		</main>
 		<Footer />

@@ -1,31 +1,21 @@
 ---
+
+import SiteWide from '~layouts/SiteWide.astro';
+
 import GitHubUser from '../components/GitHubUser.astro';
 import DevToUser from '../components/DevToUser.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import linkedinLogo from '~/assets/logos/linkedin.svg';
-import mastodonLogo from '~/assets/logos/Mastodon.svg';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-      <div>
-        <p>{SITE_DESCRIPTION}</p>
-        
-      </div>
-      <ul class="social-cards">
-        <li><GitHubUser /></li>
-        <li><DevToUser /></li>
-      </ul>
-		</main>
-		<Footer />
-	</body>
-</html>
+<SiteWide title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <article>
+    <div>
+      <p>{SITE_DESCRIPTION}</p>
+      
+    </div>
+    <ul class="social-cards">
+      <li><GitHubUser /></li>
+      <li><DevToUser /></li>
+    </ul>
+	</article>
+</SiteWide>
