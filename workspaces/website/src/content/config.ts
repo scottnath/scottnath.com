@@ -15,6 +15,7 @@ const blahg = defineCollection({
 			.optional()
 			.transform((str) => (str ? new Date(str) : undefined)),
 		heroImage: z.string().optional(),
+    heroImageDesc: z.string().optional(),
 	}),
 });
 

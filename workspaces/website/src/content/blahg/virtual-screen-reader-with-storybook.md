@@ -2,7 +2,8 @@
 title: "Simple setup: Virtual Screen Reader in Storybook"
 description: "How to set up Storybook with Guidepup's Virtual Screen Reader and test what the screen reader speaks"
 pubDate: "2024-03-01"
-heroImage: "/blahg-assets/simple-setup-guidepup-virtual-screen-reader-with-storybook.png"
+heroImage: "/blahg-assets/simple-setup-guidepup-virtual-screen-reader-with-storybook.avif"
+heroImageDesc: 'Article header image shows the Guidepup and Storybook logos between greater-than and less-than characters with text below them that reads "Simple Setup for Virtual Screen Reader + Storybook"'
 ---
 
 Recent changes to the [@guidepup Virtual Screen Reader library][vsr-github] make it ridiculously easy to integrate into Storybook for use in your integration tests. This article shows how to get the basic setup going and how to write your first screen reader test in Storybook.
@@ -147,8 +148,7 @@ This example is simple on purpose so it can easily get the copypasta treatment. 
 [guidepup]: https://guidepup.dev/
 [craig-article]: https://dev.to/craigmorten/a11y-unlocked-screen-reader-automation-tests-3mc8
 [sb-setup]: https://storybook.js.org/docs/writing-tests/interaction-testing#set-up-the-interactions-addon
-[img-test-output]: /blahg-assets/storybook-interaction-tests-showing-virtual-screen-reader.png
+[example-image]: /blahg-assets/storybook-interaction-tests-showing-virtual-screen-reader.avif
 [example-github-repo]: https://github.com/scottnath/virtual-screen-reader-storybook
 [example-story-file]: https://github.com/scottnath/virtual-screen-reader-storybook/blob/main/stories/Header.stories.js
 [example-stackblitz]: https://stackblitz.com/~/github.com/scottnath/virtual-screen-reader-storybook
-[example-image]: /blahg-assets/storybook-interaction-tests-showing-virtual-screen-reader.png
