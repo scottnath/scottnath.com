@@ -19,10 +19,10 @@ const posts = (await getCollection('blahg')).sort(
     <p itemprop="description">{BLAHG.description}</p>
     <ul class="blahg-list">
       {
-        posts.map((post) => (
+        posts.map((post, index) => (
           <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
             <a href={`/blahg/${post.slug}/`} itemprop="url">
-              <img itemprop="image" src={post.data.heroImage} alt={post.data.heroImageDesc || post.data.title} />
+              <img itemprop="image" src={post.data.heroImage} alt={post.data.heroImageDesc || post.data.title} loading={index < 6 ? 'eager' : 'lazy'} width="1000" height="420" />
             </a>
             <div class="content">
               <FormattedDate date={post.data.pubDate} itemprop="datePublished" />

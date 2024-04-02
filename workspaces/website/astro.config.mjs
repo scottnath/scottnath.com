@@ -11,6 +11,11 @@ export default defineConfig({
   devToolbar: {
     enabled: false
   },
+  markdown: {
+    shikiConfig: {
+      theme: 'slack-dark'
+    }
+  },
 	site: 'https://scottnath.com',
 	integrations: [lit(), mdx(), sitemap(), react(), 
     partytown({

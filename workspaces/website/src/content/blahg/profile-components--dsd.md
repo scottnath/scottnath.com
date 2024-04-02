@@ -2,7 +2,7 @@
 title: "Profile Components: SSR with Declarative Shadow DOM"
 description: "Enhancing Profile Components with Declarative Shadow DOM and showing examples for Server Side Rendering"
 pubDate: "2024-02-21"
-heroImage: "/profile-components-blahg/profile-components-dsd-header.png"
+heroImage: "/profile-components-blahg/profile-components-dsd-header.avif"
 ---
 
 

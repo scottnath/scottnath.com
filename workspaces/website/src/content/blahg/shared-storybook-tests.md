@@ -2,7 +2,7 @@
 title: "Reusable Storybook Interaction Tests"
 description: "Learn about a working concept for writing reusable tests which can be shared within and between components to reduce your testing footprint while increasing coverage"
 pubDate: "2023-04-20"
-heroImage: "/storybook-shared-tests.jpeg"
+heroImage: "/blahg-assets/storybook-shared-tests.avif"
 ---
 
 ## tl;dr

@@ -2,7 +2,7 @@
 title: "Deploying a multi-framework composition Storybook to GitHub Pages"
 description: "How to deploy multiple Storybooks to one repo's GitHub Pages site and use them in a multi-framework composition Storybook"
 pubDate: "2023-05-24"
-heroImage: "/storybook-composition-with-github-pages.png"
+heroImage: "/blahg-assets/storybook-composition-with-github-pages.avif"
 ---
 
 How to deploy multiple Storybooks to one repo's GitHub Pages site and display them inside a multi-framework composition Storybook
