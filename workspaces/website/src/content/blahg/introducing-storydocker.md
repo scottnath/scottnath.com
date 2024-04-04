@@ -2,7 +2,7 @@
 title: "StoryDocker: Storybook, but it's a microservice"
 description: "StoryDocker is an open-source tool which allows local Storybook development without dependencies by leveraging docker containers"
 pubDate: "2023-04-10"
-heroImage: "/storydocker-underwater.jpeg"
+heroImage: "./blahg-assets/storydocker-underwater.avif"
 ---
 
 Problem: your UI application is complicated and requires a lot of dependencies, but you also need to use [Storybook](https://storybook.js.org/docs/html/get-started/why-storybook) to prototype, test, and collaborate with non-technical folks.

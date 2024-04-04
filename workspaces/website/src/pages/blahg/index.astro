@@ -1,40 +1,103 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import { Image } from "astro:assets";
+
+import SiteWide from '~layouts/SiteWide.astro';
+import { BLAHG, STRIPE_COLORS } from '~/consts';
+import FormattedDate from '~/components/FormattedDate.astro';
+
+const postBorder = STRIPE_COLORS[0];
 
 const posts = (await getCollection('blahg')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul class="dated-list">
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<div class="content">
-									<a href={`/blahg/${post.slug}/`}>{post.data.title}</a>
-									<p>{post.data.description}</p>
-								</div>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<SiteWide title={BLAHG.title} description={BLAHG.description}>
+  <section itemscope itemtype="https://schema.org/Blog">
+    <h1 itemprop="name">{BLAHG.title}</h1>
+    <p itemprop="description">{BLAHG.description}</p>
+    <ul class="blahg-list">
+      {
+        posts.map((post, index) => (
+          <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+            <a href={`/blahg/${post.slug}/`} itemprop="url">
+              <img itemprop="image" src={post.data.heroImage} alt={post.data.heroImageDesc || post.data.title} loading={index < 6 ? 'eager' : 'lazy'} width="1000" height="420" />
+            </a>
+            <div class="content">
+              <FormattedDate date={post.data.pubDate} itemprop="datePublished" />
+              <a href={`/blahg/${post.slug}/`} itemprop="name">{post.data.title}</a>
+              <p itemprop="description">{post.data.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</SiteWide>
+<style define:vars={{ postBorder }}>
+  .blahg-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    
+    [itemprop="blogPost"] {
+      margin: 0;
+      border: 2px solid var(--postBorder);
+      border-radius: .5em;
+      overflow: hidden;
+      flex: 1 1 100%;
+      text-wrap: balance;
+      img {
+        max-width: 100%;
+        width: 100%;
+      }
+      .content {
+        padding: 1em;
+        :global([itemprop="datePublished"]) {
+          font-size: .9em;
+          font-style: italic;
+          color: var(--postBorder);
+          display: block;
+        }
+      }
+    }
+  }
+  @container main (min-width: 500px) {
+    .blahg-list {
+      [itemprop="blogPost"] {
+        flex: 1 1 47%;
+      }
+    }
+  }
+  @container main (min-width: 750px) {
+    .blahg-list {
+      [itemprop="blogPost"] {
+        flex: 1 1 31%;
+      }
+    }
+  }
+
+ul.dated-list {
+	list-style-type: none;
+	padding: unset;
+}
+ul.dated-list li {
+	display: flex;
+}
+ul.dated-list li time {
+	flex: 0 0 130px;
+	font-size: .9em;
+	font-style: italic;
+	color: var(--color-light);
+}
+ul.dated-list li .content {
+	flex: 1;
+}
+ul.dated-list li .content p {
+	margin: .25em 0;
+	font-size: .9em;
+}
+</style>

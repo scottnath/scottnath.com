@@ -1,0 +1,77 @@
+---
+import 'scottnath-components/src/dope-stripes/stripe.js';
+import { DopeStripes } from 'scottnath-components/src/dope-stripes/index.js';
+
+import HeaderLink from './HeaderLink.astro';
+import { STRIPE_COLORS } from '~/consts';
+
+---
+<nav>
+  <DopeStripes>
+    <dope-stripe color={STRIPE_COLORS[0]}>
+      <HeaderLink href="/"><span>home</span></HeaderLink>
+    </dope-stripe>
+    <dope-stripe color={STRIPE_COLORS[1]}>
+      <HeaderLink href="/whoami"><span>whoami</span></HeaderLink>
+    </dope-stripe>
+    <dope-stripe color={STRIPE_COLORS[2]}>
+      <HeaderLink href="/blahg"><span>blahg</span></HeaderLink>
+    </dope-stripe>
+    <dope-stripe color={STRIPE_COLORS[3]}>
+      <HeaderLink href="/resume"><span>resume</span></HeaderLink>
+    </dope-stripe>
+    <dope-stripe color={STRIPE_COLORS[4]}> </dope-stripe>
+  </DopeStripes>
+</nav>
+  
+<style>
+  nav {
+    font-family: var(--heading-font-family);
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: var(--stripes-top, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
+  }
+  dope-stripes {
+    position: absolute;
+    width: 100%;
+  }
+  dope-stripe {
+    --stripe-height: 1.3em;
+    --angle-x-start: var(--stripes-left, 110px);
+    --angle-width: var(--stripes-angle-width, 57px);
+    --angle-y-end: 32px;
+  }
+  dope-stripe:hover:has(a),
+  dope-stripe:has(a.active),
+  dope-stripe:focus-within {
+    filter: invert(1);
+  }
+  dope-stripe a {
+    --pad-r: .2em;
+    font-size: 1em;
+    color: var(--stripe-color);
+    filter: invert(1);
+    display: flex;
+    flex-direction: row;
+    padding-left: calc(var(--angle-x-start) + var(--angle-width) + .5em);
+    height: 100%;
+    width: calc(100% - var(--pad-r));
+    letter-spacing: .2em;
+    * {
+      align-self: last baseline;
+    }
+    &.active {
+      span::after {
+        content: ' 📌 ';
+        text-decoration: none;
+      }
+    }
+  }
+ 
+</style>

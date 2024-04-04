@@ -2,7 +2,7 @@
 title: "Profile Components: display social profiles in native web components"
 description: "Profile-components are a set of web components with zero dependencies that display publicly-available profile information from various social networks. Currently two: GitHub and dev.to."
 pubDate: "2023-10-10"
-heroImage: "/profile-components-blahg/profile-components-header-prod.jpeg"
+heroImage: "/profile-components-blahg/profile-components-header-prod.avif"
 ---
 
 Profile Components is a set of web components with zero dependencies that display publicly-available profile information from various social networks. Currently two: GitHub and dev.to.
@@ -142,7 +142,7 @@ Stylesheets have their styles nested to reduce adding extra classes to the HTML 
 Container queries allow the components to be responsive to their container, not the viewport - a more realistic usage scenario.
 |   |   |
 |---|---|
-| <figure><img src="/profile-components-blahg/devto-200px-wide.png" width="200" alt="DEV web component in a 200 pixel wide container" /><figcaption>200px wide container</figcaption></figure>  | <figure><img width="400" src="/profile-components-blahg/devto-400px-wide.png" alt="DEV web component in a 400 pixel wide container" /><figcaption>400px wide container</figcaption></figure>  |
+| <figure><img src="/profile-components-blahg/devto-200px-wide.avif" width="200" alt="DEV web component in a 200 pixel wide container" /><figcaption>200px wide container</figcaption></figure>  | <figure><img width="400" src="/profile-components-blahg/devto-400px-wide.avif" alt="DEV web component in a 400 pixel wide container" /><figcaption>400px wide container</figcaption></figure>  |
 
 ### Colors and CSS variables sourced from the social network
 

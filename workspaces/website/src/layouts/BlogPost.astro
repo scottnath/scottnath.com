@@ -1,11 +1,23 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import SiteWide from './SiteWide.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
+const { title, description, pubDate, updatedDate, heroImage, series } = Astro.props;
+
+/**
+ * @todo add series after design launch
+ */
+async function getSeries() {
+	const posts = await getCollection('blahg');
+	return posts.filter((post) => ({
+		params: { series },
+		props: post,
+	}));
+}
 type Props = CollectionEntry<'blahg'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <SiteWide title={title} description={description} image={heroImage}>
@@ -22,6 +34,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			)
 		}
 		<hr />
-		<slot />
+    <div class="readable"><slot /></div>
 	</article>
 </SiteWide>

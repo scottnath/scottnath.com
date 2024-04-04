@@ -6,9 +6,10 @@ const repos = JSON.stringify(['scottnath/profile-components', 'storydocker/story
 const declaredDOM = await dsd({
   login: 'scottnath',
   avatar_url: PROFILE_PIC,
-  repos
+  // repos
 },true)
+const { class: className, ...rest } = Astro.props;
 
 ---
 
-<github-user data-theme="light_high_contrast" set:html={declaredDOM}></github-user>
+<github-user data-theme="light_high_contrast" set:html={declaredDOM} class={className} {...rest}></github-user>
