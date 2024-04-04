@@ -8,30 +8,31 @@ import { STRIPE_COLORS } from '~/consts';
 ---
 <nav>
   <DopeStripes>
-    <dope-stripe color={STRIPE_COLORS[0]}> </dope-stripe>
-    <dope-stripe color={STRIPE_COLORS[1]}>
+    <dope-stripe color={STRIPE_COLORS[0]}>
       <HeaderLink href="/"><span>home</span></HeaderLink>
     </dope-stripe>
-    <dope-stripe color={STRIPE_COLORS[2]}>
+    <dope-stripe color={STRIPE_COLORS[1]}>
       <HeaderLink href="/whoami"><span>whoami</span></HeaderLink>
     </dope-stripe>
-    <dope-stripe color={STRIPE_COLORS[3]}>
+    <dope-stripe color={STRIPE_COLORS[2]}>
       <HeaderLink href="/blahg"><span>blahg</span></HeaderLink>
     </dope-stripe>
-    <dope-stripe color={STRIPE_COLORS[4]}>
+    <dope-stripe color={STRIPE_COLORS[3]}>
       <HeaderLink href="/resume"><span>resume</span></HeaderLink>
     </dope-stripe>
+    <dope-stripe color={STRIPE_COLORS[4]}> </dope-stripe>
   </DopeStripes>
 </nav>
   
 <style>
   nav {
+    font-family: var(--heading-font-family);
+
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     padding-top: var(--stripes-top, 0);
-    font-family: monospace;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1em;
@@ -57,36 +58,18 @@ import { STRIPE_COLORS } from '~/consts';
     color: var(--stripe-color);
     filter: invert(1);
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    padding-left: calc(var(--angle-x-start) + var(--angle-width) + .5em);
     height: 100%;
-    padding-right: var(--pad-r); 
     width: calc(100% - var(--pad-r));
+    letter-spacing: .2em;
     * {
       align-self: last baseline;
     }
     &.active {
-      span::before,
       span::after {
         content: ' 📌 ';
         text-decoration: none;
-      }
-      span::after {
-        display: none;
-      }
-    }
-  }
-
-  @media (min-width: 500px) {
-    dope-stripe a {
-      flex-direction: row;
-      padding-left: calc(var(--angle-x-start) + var(--angle-width) + .5em);
-      &.active {
-        span::before {
-          display: none;
-        }
-        span::after {
-          display: inline;
-        }
       }
     }
   }

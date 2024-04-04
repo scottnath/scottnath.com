@@ -16,6 +16,9 @@ export default defineConfig({
       theme: 'slack-dark'
     }
   },
+  redirects: {
+    '/about': '/whoami',
+  },
 	site: 'https://scottnath.com',
 	integrations: [lit(), mdx(), sitemap(), react(), 
     partytown({
