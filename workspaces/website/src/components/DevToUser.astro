@@ -6,8 +6,9 @@ import { PROFILE_PIC } from '../consts';
 const declaredDOM = dsd({
   username: 'scottnath',
   profile_image: PROFILE_PIC,
-},true);
+},'no-posts');
+const { class: className, ...rest } = Astro.props;
 ---
 
-<devto-user data-theme="dark" set:html={declaredDOM}></devto-user>
+<devto-user data-theme="dark" set:html={declaredDOM} class={className} {...rest}></devto-user>
 

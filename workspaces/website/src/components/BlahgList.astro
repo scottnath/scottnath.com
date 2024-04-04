@@ -1,0 +1,117 @@
+---
+import { getCollection } from 'astro:content';
+
+import { BLAHG, STRIPE_COLORS } from '~/consts';
+import FormattedDate from '~/components/FormattedDate.astro';
+
+const posts = (await getCollection('blahg')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const shortList = posts.slice(0, 6);
+const postBorder = STRIPE_COLORS[0];
+const { class: className, ...rest } = Astro.props;
+---
+
+<aside itemscope itemtype="https://schema.org/Blog" class={className} {...rest}>
+  <p itemprop="name">Latest blah blah blahg</p>
+  <ul class="blahg-list">
+    {
+      shortList.map((post, index) => (
+        <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <a href={`/blahg/${post.slug}/`} itemprop="url">
+            <img itemprop="image" src={post.data.heroImage} alt={post.data.heroImageDesc || post.data.title} loading={index < 6 ? 'eager' : 'lazy'} width="1000" height="420" />
+          </a>
+          <div class="content">
+            <a href={`/blahg/${post.slug}/`} itemprop="name">{post.data.title}</a>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</aside>
+
+<style define:vars={{ postBorder }}>
+  aside {
+    border: 1px solid var(--postBorder);
+    border-radius: .5em;
+    overflow: hidden;
+
+    >[itemprop="name"] {
+      font-weight: var(--font-weight-bold);
+      border-bottom: 1px solid var(--postBorder);
+      background-color: var(--bg-color-light);
+      padding: .5ch;
+      margin: 0;
+    }
+  }
+  .blahg-list {
+    list-style: none;
+    margin: 0;
+    padding: 1ch .5ch;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    
+    [itemprop="blogPost"] {
+      margin: 0;
+      overflow: hidden;
+      flex: 1 1 100%;
+      text-wrap: pretty;
+      display: flex;
+      flex-direction: row;
+      gap: 1ch;
+
+      [itemprop="url"] {
+        display: block;
+        flex: 1 1 40%;
+      }
+      img {
+        max-width: 100%;
+        width: 100%;
+      }
+      .content {
+        flex: 1 1 60%;
+        font-size: var(--font-size-light);
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @container (min-width: 400px) {
+    .blahg-list {
+      [itemprop="blogPost"] {
+        flex: 1 1 47%;
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  }
+
+  @container (min-width: 550px) {
+    .blahg-list {
+      [itemprop="blogPost"] {
+        flex: 1 1 32%;
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  }
+  @container (min-width: 1400px) {
+    .blahg-list {
+      list-style: none;
+      padding: 0 .5ch;
+      [itemprop="blogPost"] {
+        flex: 1 1 47%;
+        flex-direction: column;
+        /* [itemprop="url"] {
+          flex: 1 1 auto;
+        }
+        .content {
+          flex: 1 1 auto;
+        } */
+      }
+    }
+  }
+</style>

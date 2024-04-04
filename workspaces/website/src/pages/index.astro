@@ -2,20 +2,73 @@
 
 import SiteWide from '~layouts/SiteWide.astro';
 
-import GitHubUser from '../components/GitHubUser.astro';
-import DevToUser from '../components/DevToUser.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import GitHubUser from '~components/GitHubUser.astro';
+import DevToUser from '~components/DevToUser.astro';
+import BlahgList from "~components/BlahgList.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION, SCOTT_SHORT_DESC } from '../consts';
 ---
 
 <SiteWide title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <article>
-    <div>
-      <p>{SITE_DESCRIPTION}</p>
-      
-    </div>
-    <ul class="social-cards">
-      <li><GitHubUser /></li>
-      <li><DevToUser /></li>
-    </ul>
+    <header class="readable">
+      <h1>Scott Nath lives here <span><a href="/whoami">who am i?</a></span></h1>
+      <p>{SCOTT_SHORT_DESC}</p>
+    </header>
+    <section>
+      <BlahgList class="blahg" />
+      <GitHubUser class="gh" />
+      <DevToUser class="dev" />
+    </section>
 	</article>
 </SiteWide>
+
+<style>
+  h1 span {
+    font-size: 0.7em;
+  }
+  section {
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1ch;
+    grid-template:
+      "blahg" 1fr
+      "gh" auto
+      "dev" auto;
+  }
+  .blahg {
+    grid-area: blahg;
+  }
+  .gh {
+    grid-area: gh;
+  }
+  .dev {
+    grid-area: dev;
+  }
+  @container (min-width: 50ch) {
+    section {
+      grid-template:
+        "blahg blahg" auto
+        "gh  dev" 1fr;
+    }
+  }
+  @container (min-width: 80ch) {
+    article {
+      max-width: 100%;
+    }
+    section {
+      grid-template:
+        "blahg gh" 1fr
+        "blahg dev" 1fr / 33ch 1fr;
+    }
+  }
+  @container (min-width: 90ch) {
+    article {
+      max-width: 90%;
+    }
+    section {
+      grid-template:
+        "blahg gh dev" 1fr / 1fr 1fr 1fr;
+    }
+  }
+</style>

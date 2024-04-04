@@ -1,14 +1,18 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
+
 import devLogo from '~/assets/logos/dev.svg';
 import githubLogo from '~/assets/logos/github-inverse.svg';
 import linkedinLogo from '~/assets/logos/linkedin.svg';
 import mastodonLogo from '~/assets/logos/Mastodon.svg';
 
 export const SITE_TITLE = 'Scott Nath';
-export const SITE_SUBTITLE = 'Frontend architect';
-export const SITE_DESCRIPTION = `${SITE_SUBTITLE}, full-stack software engineer, and developer advocate. Extensive experience creating UI development systems with a focus on where developers and designers collaborate.`;
+export const SITE_SUBTITLE = 'Frontend Architect';
+export const ALT_TITLES = ['Solutions Architect', 'Software Architect', 'Full Stack Developer', 'DevOps Architect', 'Design Engineer', 'Senior Software Engineer', 'Design System Architect', 'Developer Advocate'];
+export const SITE_DESCRIPTION = `${SITE_SUBTITLE} with extensive experience creating UI development systems with a focus on where developers and designers collaborate. Alt job titles: ${ALT_TITLES.join(', ')}`;
+export const SCOTT_SHORT_DESC = 'Scott Nath is a web developer and actor living in New York State';
+
 // image must be in root of public folder
 export const PROFILE_PIC = '/scott-nath-profile-photo.avif';
 
@@ -25,8 +29,8 @@ export const RESUME_DEFUALTS = {
 };
 
 export const BLAHG = {
-  title: `Blah blah blahg by Scott Nath, ${SITE_SUBTITLE}`,
-  description: `Articles and rambling-on by Scott Nath, ${SITE_DESCRIPTION}`,
+  title: `Blah blah blahg by Scott Nath`,
+  description: `Articles and rambling-on by Scott Nath`,
 }
 
 export const SOCIALS = [
