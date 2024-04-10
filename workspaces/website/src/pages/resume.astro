@@ -9,9 +9,11 @@ const content = await getResume();
 const pageTitle = `Resume for Scott Nath - ${content.basics.short_summary}`;
 ---
 <SiteWide title={pageTitle} description={content.basics.summary}>
-  <ul class="actions">
-    <li><button onclick="window.print();">🖨️ print</button></li>
-  </ul>
+  <div class="readable">
+    <ul class="actions">
+      <li><button onclick="window.print();">🖨️ print</button></li>
+    </ul>
+  </div>
 	<Resume
 		title={content.basics.title}
 		subtitle={content.basics.subtitle}
@@ -25,3 +27,8 @@ const pageTitle = `Resume for Scott Nath - ${content.basics.short_summary}`;
 	/>
 
 </SiteWide>
+<style>
+  .readable:has(.actions) {
+    margin-bottom: 0;
+  }
+</style>

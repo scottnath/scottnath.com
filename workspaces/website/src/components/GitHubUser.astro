@@ -6,6 +6,7 @@ const repos = JSON.stringify(['scottnath/profile-components', 'storydocker/story
 const declaredDOM = await dsd({
   login: 'scottnath',
   avatar_url: PROFILE_PIC,
+  schema_itemprop: 'owns'
   // repos
 },true)
 const { class: className, ...rest } = Astro.props;

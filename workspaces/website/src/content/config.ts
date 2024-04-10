@@ -36,6 +36,7 @@ const blahg = defineCollection({
 		heroImage: z.string().optional(),
     heroImageDesc: z.string().optional(),
     series: reference(series).optional(),
+    schemaType: z.string().default('TechArticle'),
 	}),
 });
 
