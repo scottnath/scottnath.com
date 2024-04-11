@@ -10,8 +10,9 @@ import mastodonLogo from '~/assets/logos/Mastodon.svg';
 export const SITE_TITLE = 'Scott Nath';
 export const SITE_SUBTITLE = 'Frontend Architect';
 export const ALT_TITLES = ['Solutions Architect', 'Software Architect', 'Full Stack Developer', 'DevOps Architect', 'Design Engineer', 'Senior Software Engineer', 'Design System Architect', 'Developer Advocate'];
-export const SITE_DESCRIPTION = `${SITE_SUBTITLE} with extensive experience creating UI development systems with a focus on where developers and designers collaborate. Alt job titles: ${ALT_TITLES.join(', ')}`;
 export const SCOTT_SHORT_DESC = 'Scott Nath is a web developer and actor living in New York State';
+export const SITE_DESCRIPTION = `${SCOTT_SHORT_DESC} with extensive experience creating UI development systems with a focus on where developers and designers collaborate. Alt job titles: ${ALT_TITLES.join(', ')}`;
+
 
 // image must be in root of public folder
 export const PROFILE_PIC = '/scott-nath-profile-photo.avif';

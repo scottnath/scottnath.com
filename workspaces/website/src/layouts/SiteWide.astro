@@ -3,7 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { title, description, image } = Astro.props;
+const { title, description, image, ...rest } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ const { title, description, image } = Astro.props;
 	<body>
     <a href="#main" id="skip-to-main">Skip to main content</a>
 		<Header />
-		<main transition:animate="slide" id="main">
+		<main id="main" {...rest}>
       <slot />
 		</main>
 		<Footer />

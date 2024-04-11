@@ -400,6 +400,22 @@ article {
   }
 }
 
+.article-dates {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: .8em;
+  gap: 2ch;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-wrap: nowrap;
+    dt {
+      padding-right: .5ch;
+    }
+  }
+}
+
 .blog-post {
   max-width: 900px;
   margin: 0 auto;

@@ -6,6 +6,7 @@ import { PROFILE_PIC } from '../consts';
 const declaredDOM = dsd({
   username: 'scottnath',
   profile_image: PROFILE_PIC,
+  schema_itemprop: 'owns'
 },'no-posts');
 const { class: className, ...rest } = Astro.props;
 ---

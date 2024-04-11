@@ -1,130 +1,142 @@
 ---
 title: 'Scott Nath: What about him? Who is he? What does he do?'
+pubDate: "2024-04-04"
+updatedDate: "2024-04-04"
 ---
 
 import SiteWide from '~layouts/SiteWide.astro';
+import FormattedDate from '~/components/FormattedDate.astro';
 import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
 
 
-<SiteWide title={frontmatter.title} description={SCOTT_SHORT_DESC} image={frontmatter.heroImage}>
+<SiteWide title={frontmatter.title} description={SCOTT_SHORT_DESC} image={frontmatter.heroImage} itemscope itemtype="https://schema.org/AboutPage">
 
+<div itemprop="mainContentOfPage">
   <article itemscope itemtype="https://schema.org/Person">
+    <header class="readable">
+      <h1>About <span itemprop="name">Scott Nath</span></h1>
 
-  <header class="readable">
-    <h1>About <span itemprop="name">Scott Nath</span></h1>
+      **_tl;dr_: <span itemprop="description">{SCOTT_SHORT_DESC}</span>**
+    </header>
+    <section itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
+      <div class="readable">
+        <h2 itemprop="alternateName">Web Developer</h2>
 
-    **_tl;dr_: {SCOTT_SHORT_DESC}**
+        I am a <em itemprop="name">Frontend Architect</em>, which also means <em itemprop="alternateName">{ALT_TITLES.join(', ')}</em> or any other of a long list of new-hotness titles. I'm a polyglot, full-stack engineer who specializes in the front-end - which really just means I care about every User getting what they need.
+        
+        You can boil down what I do to four things: 
 
-    
+        1. I build performant and accessible UIs in whatever flavor frontend you like 
+        2. I mentor and equip development teams to efficiently do the same 
+        3. I build DevX that tests, prototypes and deploys
+        4. I figure out how to make things work that shouldn't work
 
-  </header>
-  <section>
-    <div class="readable">
-      <h2 itemprop="hasOccupation">Web development</h2>
+      </div>
+      <div class="meow">
+        <section class="readable">
 
-      I am a **Frontend Architect**, which also means _{ALT_TITLES.join(', ')}_ or any other of a long list of new-hotness titles. I'm a polyglot, full-stack engineer who specializes in the front-end - which really just means I care about every User getting what they need.
-      
-      You can boil down what I do to four things: 
+          ### What I know
 
-      1. I build performant and accessible UIs in whatever flavor frontend you like 
-      2. I mentor and equip development teams to efficiently do the same 
-      3. I build DevX that tests, prototypes and deploys
-      4. I figure out how to make things work that shouldn't work
+          I'm self-taught, starting with HTML (1998), CSS (2001), Javascript (2009), Node.js (2013), and tons more after.   Below is a list of tech I use regularly.
 
-    </div>
-    <div class="meow">
-      <section class="readable">
+          <dl class="yes">
+            <div>
+              <dt>Languages</dt>
+              <dd itemprop="skills">Javascript, HTML, CSS, Typescript, Gherkin, Bash/Shell, (recent: Python)</dd>
+            </div>
+            <div>
+              <dt>Libraries and tools</dt>
+              <dd itemprop="skills">Node.js, Vite, native browser and DOM APIs, Storybook, Docker, GraphQL, git, Octokit, i18n, Wordpress</dd>
+            </div>
+            <div>
+              <dt>UI components</dt>
+              <dd itemprop="skills">customElements & Web Components, Vue.js, Lit & LitElement, Handlebars, Sass (sometimes: Svelte, React, Preact)</dd>
+            </div>
+            <div>
+              <dt>Soft Skills</dt>
+              <dd itemprop="skills">Honest and clear communicator, Agile methodologies, Design Thinking, developer advocacy and translation</dd>
+            </div>
+            <div>
+              <dt>DevOps and CI/CD</dt>
+              <dd itemprop="skills">GitHub, GitHub Actions, Travis</dd>
+            </div>
+            <div>
+              <dt>Collaboration</dt>
+              <dd itemprop="skills">Slack, Jira, ZenHub, Trello, Airtable</dd>
+            </div>
+            <div>
+              <dt>Testing and QA</dt>
+              <dd itemprop="skills">Testing-Library, Jest, Playwright, Vitest, Istanbul, Chromatic, test automation, test-driven-development (TDD), screen-reader testing, accessibility compliance</dd>
+            </div>
+          </dl>
+        </section>
 
-        ### What I know
+        <section class="readable">
 
-        I'm self-taught, starting with HTML (1998), CSS (2001), Javascript (2009), Node.js (2013), and tons more after.   Below is a list of tech I use regularly.
+          ### What I've done
 
-        <dl class="yes">
-          <div>
-            <dt>Languages</dt>
-            <dd>Javascript, HTML, CSS, Typescript, Gherkin, Bash/Shell, (recently: Python)</dd>
-          </div>
-          <div>
-            <dt>Libraries and tools</dt>
-            <dd>Node.js, Vite, native browser and DOM APIs, Storybook, Docker, GraphQL, git, Octokit, i18n, Wordpress</dd>
-          </div>
-          <div>
-            <dt>UI components</dt>
-            <dd>customElements & Web Components, Vue.js, Lit & LitElement, Handlebars, Sass (sometimes: Svelte, React, Preact)</dd>
-          </div>
-          <div>
-            <dt>Soft Skills</dt>
-            <dd>Honest and clear communicator, Agile methodologies, Design Thinking, developer advocacy and translation</dd>
-          </div>
-          <div>
-            <dt>DevOps and CI/CD</dt>
-            <dd>GitHub, GitHub Actions, Travis</dd>
-          </div>
-          <div>
-            <dt>Collaboration</dt>
-            <dd>Slack, Jira, ZenHub, Trello, Airtable</dd>
-          </div>
-          <div>
-            <dt>Testing and QA</dt>
-            <dd>Testing-Library, Jest, Playwright, Vitest, Istanbul, Chromatic, test automation, test-driven-development (TDD), screen-reader testing, accessibility compliance</dd>
-          </div>
-        </dl>
-      </section>
+          Formerly IBM, NBCUniversal, Atmosphere BBDO (Emirates Airlines, NFL), AKQA (Coca-Cola), Theater Puget Sound (Seattle), and tons of open source. Some highlights:
 
-      <section class="readable">
+          <dl class="yes">
+            <div>
+              <dt>Enterprise Design System Architect</dt>
+              <dd itemprop="responsibilities">Architect of an innersource (IBM) UI design system and dual-framework component library (VueJS and Vanilla JS)</dd>
+            </div>
+            <div>
+              <dt>Health-industry Design System Architect</dt>
+              <dd itemprop="responsibilities">Architect of a Design System delivering accessible UI components to Health apps built on unrelated tech stacks</dd>
+            </div>
+            <div>
+              <dt>Reusable WordPress development architecture</dt>
+              <dd itemprop="responsibilities">(NBCUniversal) Innersource WordPress system (NBCUPress) which was a reusable application deployment system written in PHP</dd>
+            </div>
+            <div>
+              <dt>Punchcard CMS</dt>
+              <dd itemprop="responsibilities">(IBM, open source) NodeJS-based content canagement system (CMS with a Postgres backend: [github.com/punchcard-cms](https://github.com/punchcard-cms/punchcard))</dd>
+            </div>
+            <div>
+              <dt>Profile Components</dt>
+              <dd itemprop="responsibilities">(open source) Zero dependency native web components to present user profiles ([github.com/scottnath/profile-components](https://github.com/scottnath/profile-components))</dd>
+            </div>
+            <div>
+              <dt>StoryDocker</dt>
+              <dd itemprop="responsibilities">(open source) Microservice UI development architecture (shared Storybook & testing environment: [github.com/storydocker](https://github.com/storydocker/storydocker))</dd>
+            </div>
+            <div>
+              <dt>Shared testing</dt>
+              <dd itemprop="responsibilities">(open source) Cross-framework shared-testing spec (tests that don’t care what JS framework you use [dev.to/scottnath/series/22727](https://dev.to/scottnath/series/22727))</dd>
+            </div>
+          </dl>
+        </section>
+      </div>
 
-        ### What I've done
+    </section>
+    <section class="readable" itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
 
-        Formerly IBM, NBCUniversal, Atmosphere BBDO (Emirates Airlines, NFL), AKQA (Coca-Cola), Theater Puget Sound (Seattle), and tons of open source. Some highlights:
+      <h2 itemprop="name">Actor</h2>
 
-        <dl class="yes">
-          <div>
-            <dt>Enterprise Design System Architect</dt>
-            <dd>Architect of an innersource (IBM) UI design system and dual-framework component library (VueJS and Vanilla JS)</dd>
-          </div>
-          <div>
-            <dt>Health-industry Design System Architect</dt>
-            <dd>Architect of a Design System delivering accessible UI components to Health apps built on unrelated tech stacks</dd>
-          </div>
-          <div>
-            <dt>Reusable WordPress development architecture</dt>
-            <dd>(NBCUniversal) Innersource WordPress system (NBCUPress) which was a reusable application deployment system written in PHP</dd>
-          </div>
-          <div>
-            <dt>Punchcard</dt>
-            <dd>(IBM, open source) NodeJS-based content canagement system (CMS with a Postgres backend: [Punchcard](https://github.com/punchcard-cms/punchcard))</dd>
-          </div>
-          <div>
-            <dt>Punchcard</dt>
-            <dd>(open source) Zero dependency native web components to present user profiles ([profile-components](https://github.com/scottnath/profile-components))</dd>
-          </div>
-          <div>
-            <dt>Punchcard</dt>
-            <dd>(open source) Microservice UI development architecture (shared Storybook & testing environment: [StoryDocker](https://github.com/storydocker/storydocker))</dd>
-          </div>
-          <div>
-            <dt>Punchcard</dt>
-            <dd>(open source) Cross-framework shared-testing spec (tests that don’t care what JS framework you use [Shared tests article series](/blahg/shared-storybook-tests/))</dd>
-          </div>
-        </dl>
-      </section>
-    </div>
+      Yup...I'm a classically trained actor with a lot of Shakespeare under my belt. 
 
-  </section>
-  <section class="readable">
+      🎭 tv & film: <a href="https://www.imdb.com/name/nm1009210/" itemprop="url">IMDB</a>
 
-    <h2 itemprop="specialty">Actor?</h2>
+      **Check out my brief appearance on <em itemprop="performerIn">Law & Order: SVU</em> !**
 
-    Yup...I'm a classically trained actor with a lot of Shakespeare under my belt. 
+      <a href="https://www.youtube.com/watch?v=2oR5n1hdjJo&ab_channel=ScottNath" target="_blank"><img src="/actor/scott-nath-brief-appearance-on-law-and-order-screenshot.jpeg" width="1000" height="570" alt="Screen shot from Scott Nath's brief appearance on Law & Order: SVU" /></a>
 
-    🎭 tv & film: https://www.imdb.com/name/nm1009210/
-
-    **Check out my brief appearance on _Law & Order: SVU_ !**
-
-    <a href="https://www.youtube.com/watch?v=2oR5n1hdjJo&ab_channel=ScottNath" target="_blank"><img src="/actor/scott-nath-brief-appearance-on-law-and-order-screenshot.jpeg" width="1000" height="570" alt="Screen shot from Scott Nath's brief appearance on Law & Order: SVU" /></a>
-
-  </section>
-
+    </section>
+    <footer>
+      <dl class="article-dates">
+        <div>
+          <dt>Published</dt>
+          <dd><FormattedDate date={new Date(frontmatter.pubDate)} itemprop='datePublished' /></dd>
+        </div>
+        <div>
+          <dt>Last update</dt>
+          <dd><FormattedDate date={new Date(frontmatter.updatedDate)} itemprop="lastReviewed" /></dd>
+        </div>
+      </dl>
+    </footer>
   </article>
+  </div>
 </SiteWide>
 

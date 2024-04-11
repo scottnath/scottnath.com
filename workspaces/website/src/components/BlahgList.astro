@@ -1,8 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 
-import { BLAHG, STRIPE_COLORS } from '~/consts';
-import FormattedDate from '~/components/FormattedDate.astro';
+import { STRIPE_COLORS } from '~/consts';
 
 const posts = (await getCollection('blahg')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()

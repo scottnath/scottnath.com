@@ -6,19 +6,19 @@ import GitHubUser from '~components/GitHubUser.astro';
 import DevToUser from '~components/DevToUser.astro';
 import BlahgList from "~components/BlahgList.astro";
 
-import { SITE_TITLE, SITE_DESCRIPTION, SCOTT_SHORT_DESC } from '../consts';
+import { SITE_TITLE, SITE_SUBTITLE, SITE_DESCRIPTION, SCOTT_SHORT_DESC } from '../consts';
 ---
 
-<SiteWide title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <article>
+<SiteWide title={`${SITE_TITLE}, ${SITE_SUBTITLE}`} description={SITE_DESCRIPTION}>
+  <article itemscope itemtype="https://schema.org/Person">
     <header class="readable">
       <h1>Scott Nath lives here <span><a href="/whoami">who am i?</a></span></h1>
-      <p>{SCOTT_SHORT_DESC}</p>
+      <p itemprop="description">{SCOTT_SHORT_DESC}</p>
     </header>
     <section>
-      <BlahgList class="blahg" />
-      <GitHubUser class="gh" />
-      <DevToUser class="dev" />
+      <BlahgList class="blahg" itemprop="owns" />
+      <GitHubUser class="gh" schema_itemprop="owns" />
+      <DevToUser class="dev" schema_itemprop="owns" />
     </section>
 	</article>
 </SiteWide>

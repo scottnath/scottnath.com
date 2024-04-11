@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import SiteWide from './SiteWide.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
-const { title, description, pubDate, updatedDate, heroImage, series } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, series, schemaType } = Astro.props;
 
 /**
  * @todo add series after design launch
@@ -18,22 +18,32 @@ async function getSeries() {
 }
 type Props = CollectionEntry<'blahg'>['data'];
 
+const itemtype = `https://schema.org/${schemaType}`;
+
 ---
 
 <SiteWide title={title} description={description} image={heroImage}>
-	<article class="blog-post">
-		{heroImage && <img width="100%" height="auto" src={heroImage} alt="" />}
-		<h1 class="title">{title}</h1>
-    <p>{description}</p>
-		<FormattedDate date={pubDate} />
-		{
-			updatedDate && (
-				<div class="last-updated-on">
-					Last updated on <FormattedDate date={updatedDate} />
-				</div>
-			)
-		}
+	<article class="blog-post" itemscope itemtype={itemtype}>
+    <header>
+      {heroImage && <img width="100%" height="auto" src={heroImage} alt="" />}
+      <h1 class="title" itemprop="name">{title}</h1>
+      <p itemprop="description">{description}</p>
+      <dl class="article-dates">
+        <div>
+          <dt>Published</dt>
+          <dd><FormattedDate date={pubDate} itemprop='datePublished' /></dd>
+        </div>
+        {
+          updatedDate && (
+          <div>
+            <dt>Updated</dt>
+            <dd><FormattedDate date={updatedDate} itemprop='dateModified' /></dd>
+          </div>
+          )
+        }
+      </dl>
+    </header>
 		<hr />
-    <div class="readable"><slot /></div>
+    <div class="readable" itemprop="articleBody"><slot /></div>
 	</article>
 </SiteWide>
