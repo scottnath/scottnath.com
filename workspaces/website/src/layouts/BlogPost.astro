@@ -24,17 +24,25 @@ const itemtype = `https://schema.org/${schemaType}`;
 
 <SiteWide title={title} description={description} image={heroImage}>
 	<article class="blog-post" itemscope itemtype={itemtype}>
-		{heroImage && <img width="100%" height="auto" src={heroImage} alt="" />}
-		<h1 class="title" itemprop="name">{title}</h1>
-    <p itemprop="description">{description}</p>
-		<FormattedDate date={pubDate} itemprop='datePublished' />
-		{
-			updatedDate && (
-				<div class="last-updated-on">
-					Last updated on <FormattedDate date={updatedDate} itemprop='dateModified' />
-				</div>
-			)
-		}
+    <header>
+      {heroImage && <img width="100%" height="auto" src={heroImage} alt="" />}
+      <h1 class="title" itemprop="name">{title}</h1>
+      <p itemprop="description">{description}</p>
+      <dl class="article-dates">
+        <div>
+          <dt>Published</dt>
+          <dd><FormattedDate date={pubDate} itemprop='datePublished' /></dd>
+        </div>
+        {
+          updatedDate && (
+          <div>
+            <dt>Updated</dt>
+            <dd><FormattedDate date={updatedDate} itemprop='dateModified' /></dd>
+          </div>
+          )
+        }
+      </dl>
+    </header>
 		<hr />
     <div class="readable" itemprop="articleBody"><slot /></div>
 	</article>
