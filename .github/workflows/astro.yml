@@ -17,10 +17,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: '20'
+      - name: Latest npm
+        run: npm install -g npm@latest
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -30,7 +32,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
+      - run: npm i
       - run: npm run build
         env: 
           AIRTABLE_API_KEY: ${{secrets.AIRTABLE_API_KEY}}
