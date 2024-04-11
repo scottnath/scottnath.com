@@ -1,15 +1,55 @@
 ---
-import { SITE_TITLE } from '../consts';
+import WebRing from './WebRing.astro';
+import { SITE_TITLE, STRIPE_COLORS } from '~/consts';
 const today = new Date();
+const navBorder = STRIPE_COLORS[0];
 ---
 
 <footer>
-	<hr />
-	&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} All rights reserved.
+  <nav>
+    <a href="/">home</a>
+    <a href="/whoami">whoami</a>
+    <a href="/blahg">blahg</a>
+    <a href="/resume">resume</a>
+    <a href="/rss.xml" target="_blank">rss feed</a>
+  </nav>
+	<p>&copy; 2001-{today.getFullYear()}&nbsp;{SITE_TITLE} All rights reserved.</p>
+
+  <WebRing />
+
+  <a href="/" class="you-still-here" title="You're still here? Go Home"><img src="/ferris-end-scene.avif" width="381" height="177" alt="You're still here? (Screen shot from Ferris Bueller's Day Off)" /></a>
 </footer>
-<style>
+
+<style define:vars={{ navBorder }}>
 	footer {
-		padding: 25px 0;
+		padding: 2em 0 4em;
 		text-align: center;
+    nav {
+      border-top: 1px solid var(--navBorder);
+      border-bottom: 1px solid var(--navBorder);
+      display: inline-block;
+      width: 100%;
+      padding: 2em 0;
+      max-width: var(--max-character-width);
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        &::before {
+          content: ' • ';
+        }
+        &:first-child::before {
+          content: ''
+        }
+      }
+    }
+    .you-still-here {
+      display: block;
+      margin: 100vh auto 0;
+      img {
+        margin: 0 auto;
+        border-radius: 1em;
+      }
+    }
 	}
 </style>

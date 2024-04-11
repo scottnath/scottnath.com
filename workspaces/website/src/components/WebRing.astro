@@ -1,0 +1,37 @@
+---
+import { SITE_TITLE, STRIPE_COLORS } from '~/consts';
+const today = new Date();
+const navBorder = STRIPE_COLORS[0];
+---
+
+<div>
+  <h3>CS.Sjoy.lol <a href="https://cs.sjoy.lol">webring</a></h3>
+  <div>
+    <a href="https://webri.ng/webring/cssjoy/previous?via=https://scottnath.com" aria-label="previous site">← Prev</a>
+    <a href="https://webri.ng/webring/cssjoy/random?via=https://scottnath.com" aria-label="random site">🎲</a>
+    <a href="https://webri.ng/webring/cssjoy/next?via=https://scottnath.com" aria-label="next site">Next →</a>
+  </div>
+</div>
+
+<style define:vars={{ navBorder }}>
+  div:has(h3) {
+    display: inline-block;
+    border: 1px solid var(--navBorder);
+    padding: .5em 3em;
+    border-radius: 2em;
+
+    h3 {
+      margin: 0;
+      padding-bottom: 1em;
+    }
+
+    div {
+      display: flex;
+      a {
+        flex: 1;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+    }
+  }
+</style>
