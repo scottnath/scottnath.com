@@ -13,7 +13,7 @@ const posts = (await getCollection('blahg')).sort(
 );
 ---
 
-<SiteWide title={BLAHG.title} description={BLAHG.description}>
+<SiteWide title={BLAHG.pageTitle} description={BLAHG.pageDesc}>
   <section itemscope itemtype="https://schema.org/Blog">
     <h1 itemprop="name">{BLAHG.title}</h1>
     <p itemprop="description">{BLAHG.description}</p>

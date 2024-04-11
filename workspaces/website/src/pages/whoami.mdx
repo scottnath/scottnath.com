@@ -1,7 +1,7 @@
 ---
 title: 'Scott Nath: What about him? Who is he? What does he do?'
 pubDate: "2024-04-04"
-updatedDate: "2024-04-04"
+updatedDate: "2024-04-11"
 ---
 
 import SiteWide from '~layouts/SiteWide.astro';
@@ -10,9 +10,7 @@ import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
 
 
 <SiteWide title={frontmatter.title} description={SCOTT_SHORT_DESC} image={frontmatter.heroImage} itemscope itemtype="https://schema.org/AboutPage">
-
-<div itemprop="mainContentOfPage">
-  <article itemscope itemtype="https://schema.org/Person">
+  <article itemprop="about" itemscope itemtype="https://schema.org/Person">
     <header class="readable">
       <h1>About <span itemprop="name">Scott Nath</span></h1>
 
@@ -20,7 +18,7 @@ import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
     </header>
     <section itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
       <div class="readable">
-        <h2 itemprop="alternateName">Web Developer</h2>
+        <h2 itemprop="alternateName">Senior Web Developer</h2>
 
         I am a <em itemprop="name">Frontend Architect</em>, which also means <em itemprop="alternateName">{ALT_TITLES.join(', ')}</em> or any other of a long list of new-hotness titles. I'm a polyglot, full-stack engineer who specializes in the front-end - which really just means I care about every User getting what they need.
         
@@ -46,7 +44,7 @@ import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
             </div>
             <div>
               <dt>Libraries and tools</dt>
-              <dd itemprop="skills">Node.js, Vite, native browser and DOM APIs, Storybook, Docker, GraphQL, git, Octokit, i18n, Wordpress</dd>
+              <dd itemprop="skills">Node.js, langchain ([contributor](https://github.com/langchain-ai/langchain/pull/17014)), Vite, native browser and DOM APIs, Storybook, Docker, GraphQL, git, Octokit, i18n, Wordpress</dd>
             </div>
             <div>
               <dt>UI components</dt>
@@ -111,32 +109,30 @@ import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
       </div>
 
     </section>
-    <section class="readable" itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
+    <section class="readable" itemprop="hasOccupation" itemscope itemtype="https://schema.org/PerformanceRole">
 
-      <h2 itemprop="name">Actor</h2>
+      <h2 itemprop="roleName">Actor</h2>
 
       Yup...I'm a classically trained actor with a lot of Shakespeare under my belt. 
 
       🎭 tv & film: <a href="https://www.imdb.com/name/nm1009210/" itemprop="url">IMDB</a>
 
-      **Check out my brief appearance on <em itemprop="performerIn">Law & Order: SVU</em> !**
-
-      <a href="https://www.youtube.com/watch?v=2oR5n1hdjJo&ab_channel=ScottNath" target="_blank"><img src="/actor/scott-nath-brief-appearance-on-law-and-order-screenshot.jpeg" width="1000" height="570" alt="Screen shot from Scott Nath's brief appearance on Law & Order: SVU" /></a>
+      <a href="https://www.youtube.com/watch?v=2oR5n1hdjJo&ab_channel=ScottNath" target="_blank" style="text-align: center">
+        Check out my <span itemprop="description">brief appearance on <em>Law & Order: SVU</em></span>!
+        <img src="/actor/scott-nath-brief-appearance-on-law-and-order-screenshot.jpeg" itemprop="image" width="1000" height="570" alt="Screen shot from Scott Nath's brief appearance on Law & Order: SVU" />
+      </a>
 
     </section>
-    <footer>
-      <dl class="article-dates">
-        <div>
-          <dt>Published</dt>
-          <dd><FormattedDate date={new Date(frontmatter.pubDate)} itemprop='datePublished' /></dd>
-        </div>
-        <div>
-          <dt>Last update</dt>
-          <dd><FormattedDate date={new Date(frontmatter.updatedDate)} itemprop="lastReviewed" /></dd>
-        </div>
-      </dl>
-    </footer>
   </article>
-  </div>
+  <dl class="readable article-dates">
+    <div>
+      <dt>Published</dt>
+      <dd><FormattedDate date={new Date(frontmatter.pubDate)} itemprop='datePublished' /></dd>
+    </div>
+    <div>
+      <dt>Last update</dt>
+      <dd><FormattedDate date={new Date(frontmatter.updatedDate)} itemprop="lastReviewed" /></dd>
+    </div>
+  </dl>
 </SiteWide>
 
