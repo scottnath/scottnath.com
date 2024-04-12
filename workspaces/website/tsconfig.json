@@ -19,6 +19,11 @@
       ]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+    "types": [
+      "astro/client",
+      "vite-plugin-pwa/vanillajs",
+      "vite-plugin-pwa/info"
+    ]
   }
 }
