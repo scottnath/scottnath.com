@@ -33,8 +33,6 @@
     "@astrojs/partytown": "^2.0.4",
     "@storybook/testing-library": "^0.2.2",
     "@testing-library/react": "^15.0.0",
-    "@vite-pwa/assets-generator": "^0.2.4",
-    "@vite-pwa/astro": "^0.3.1",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "astro-icon": "^1.1.0",
     "lit": "^3.1.2",
