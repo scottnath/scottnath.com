@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import SiteWide from './SiteWide.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
-const { title, description, pubDate, updatedDate, heroImage, series, schemaType } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImageDesc, series, schemaType } = Astro.props;
 
 /**
  * @todo add series after design launch
@@ -20,12 +20,17 @@ type Props = CollectionEntry<'blahg'>['data'];
 
 const itemtype = `https://schema.org/${schemaType}`;
 
+let heroImgAlt = heroImageDesc;
+if (!heroImgAlt) {
+  heroImgAlt = `Header image for article '${title}'`
+}
+
 ---
 
 <SiteWide title={title} description={description} image={heroImage}>
 	<article class="blog-post" itemscope itemtype={itemtype}>
     <header>
-      {heroImage && <img width="100%" height="auto" src={heroImage} alt="" />}
+      {heroImage && <img width="100%" height="auto" src={heroImage} alt={heroImgAlt} />}
       <h1 class="title" itemprop="name">{title}</h1>
       <p itemprop="description">{description}</p>
       <dl class="article-dates">
