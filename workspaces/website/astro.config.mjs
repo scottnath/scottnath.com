@@ -3,7 +3,6 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import react from '@astrojs/react';
 import lit from '@astrojs/lit';
-import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +18,7 @@ export default defineConfig({
     '/about': '/whoami',
   },
 	site: 'https://scottnath.com',
-	integrations: [lit(), mdx(), sitemap(), react(), 
+	integrations: [lit(), mdx(), react(), 
     partytown({
       // Adds dataLayer.push as a forwarding-event.
       config: {

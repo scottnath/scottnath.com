@@ -16,7 +16,6 @@
     "@astrojs/mdx": "^2.2.4",
     "@astrojs/react": "^3.2.0",
     "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.2",
     "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "airtable": "^0.12.2",
@@ -25,6 +24,7 @@
     "profile-components": "^0.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sitemap": "^7.1.1",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
