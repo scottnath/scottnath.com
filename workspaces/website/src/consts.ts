@@ -29,6 +29,15 @@ export const RESUME_DEFUALTS = {
   },
 };
 
+export const Four04 = {
+  title: `WHOOPS! (404)`,
+  description: `Looks like you got lost on this website by Scott Nath`,
+  pageTitle: '',
+  pageDesc: ''
+}
+Four04.pageTitle = `${Four04.title}: scottnath.com wayward visitor page with full site map`
+Four04.pageDesc = `This page is the 404 landing page for scottnath.com, it includes links to all pages so you can get un-lost`
+
 export const BLAHG = {
   title: `Blah blah blahg by Scott Nath`,
   description: `Articles and rambling-on by Scott Nath`,
