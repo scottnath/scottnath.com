@@ -14,4 +14,5 @@ jobs:
           sitemap-location: 'https://scottnath.com/sitemap-index.xml'
           since: 1
           since-unit: "year"
+          endpoint: "api.indexnow.org"
           key: ${{ secrets.INDEXNOW_KEY }}
