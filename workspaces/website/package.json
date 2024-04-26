@@ -8,10 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "404file": "cp ./404.html ./dist/404.html",
     "jekyllfile": "touch ./dist/.nojekyll",
     "cname": "echo \"scottnath.com\" >>  ./dist/CNAME",
-    "site-files": "npm run 404file && npm run jekyllfile && npm run cname"
+    "site-files": "npm run jekyllfile && npm run cname"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.2.4",
@@ -38,6 +37,7 @@
     "lit": "^3.1.2",
     "postcss-nested": "^6.0.1",
     "prop-types": "^15.8.1",
+    "resumed": "^3.0.1",
     "sass": "^1.74.1",
     "vite": "^5.2.8"
   },
