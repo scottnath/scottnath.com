@@ -1,8 +1,8 @@
 name: 'IndexNow'
 on:
-  schedule:
-    # Set the schedule time
-    - cron:  '0 0,12 * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   check-and-submit:
