@@ -18,7 +18,7 @@ const posts = (await getCollection('blahg')).sort(
       <li><a href="/" itemprop="relatedLink">Home page of scottnath.com</a></li>
       <li><a href="/whoami/" itemprop="relatedLink">The Scott Nath About page</a></li>
       <li><a href="/resume/" itemprop="relatedLink">Resume for Scott Nath, {SITE_SUBTITLE}</a></li>
-      <li><a href="/sitemap-index.xml" target="_blank" itemprop="significantLink">Sitemap: scottnath.com/sitemap-index.xml</a></li>
+      <li><a href="/sitemap.xml" target="_blank" itemprop="significantLink">Sitemap: scottnath.com/sitemap.xml</a></li>
       <li><a href="/blahg/" itemprop="relatedLink">{BLAHG.title}</a><ul>
       {
         posts.map((post, index) => (
