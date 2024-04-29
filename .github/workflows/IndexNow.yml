@@ -12,4 +12,6 @@ jobs:
         uses: bojieyang/indexnow-action@v2
         with:
           sitemap-location: 'https://scottnath.com/sitemap.xml'
+          since: 1
+          since-unit: year
           key: ${{ secrets.INDEXNOW_KEY }}
