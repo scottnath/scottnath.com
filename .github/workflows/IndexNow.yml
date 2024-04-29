@@ -1,8 +1,12 @@
 name: 'IndexNow'
+
 on:
-  push:
-    branches:
-      - main
+  schedule:
+  # Scheduled in UTC.
+  - cron:  '0 0,12 * * *'
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   check-and-submit:
@@ -13,5 +17,5 @@ jobs:
         with:
           sitemap-location: 'https://scottnath.com/sitemap.xml'
           since: 1
-          since-unit: year
+          since-unit: "day"
           key: ${{ secrets.INDEXNOW_KEY }}
