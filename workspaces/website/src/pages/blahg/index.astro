@@ -14,19 +14,19 @@ const posts = (await getCollection('blahg')).sort(
 ---
 
 <SiteWide title={BLAHG.pageTitle} description={BLAHG.pageDesc}>
-  <section itemscope itemtype="https://schema.org/Blog">
+  <section itemscope itemtype="https://schema.org/Blog" itemref="scottnath">
     <h1 itemprop="name">{BLAHG.title}</h1>
     <p itemprop="description">{BLAHG.description}</p>
     <ul class="blahg-list">
       {
         posts.map((post, index) => (
-          <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemref="scottnath">
             <a href={`/blahg/${post.slug}/`} itemprop="url">
               <img itemprop="image" src={post.data.heroImage} alt={post.data.heroImageDesc || post.data.title} loading={index < 6 ? 'eager' : 'lazy'} width="1000" height="420" />
             </a>
             <div class="content">
               <FormattedDate date={post.data.pubDate} itemprop="datePublished" />
-              <a href={`/blahg/${post.slug}/`} itemprop="name">{post.data.title}</a>
+              <a href={`/blahg/${post.slug}/`}><span itemprop="headline">{post.data.title}</span></a>
               <p itemprop="description">{post.data.description}</p>
             </div>
           </li>

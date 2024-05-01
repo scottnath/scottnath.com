@@ -1,7 +1,7 @@
 ---
 title: 'Scott Nath: What about him? Who is he? What does he do?'
 pubDate: "2024-04-04"
-updatedDate: "2024-04-24"
+updatedDate: "2024-05-01"
 ---
 
 import SiteWide from '~layouts/SiteWide.astro';
@@ -9,8 +9,8 @@ import FormattedDate from '~/components/FormattedDate.astro';
 import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
 
 
-<SiteWide title={frontmatter.title} description={SCOTT_SHORT_DESC} image={frontmatter.heroImage} itemscope itemtype="https://schema.org/AboutPage">
-  <article itemprop="about" itemscope itemtype="https://schema.org/Person">
+<SiteWide title={frontmatter.title} description={SCOTT_SHORT_DESC} image={frontmatter.heroImage} itemscope itemtype="https://schema.org/ProfilePage" itemref="scottnath">
+  <article itemprop="mainEntity" itemscope itemtype="https://schema.org/Person">
     <header class="readable">
       <h1>About <span itemprop="name">Scott Nath</span></h1>
 
@@ -19,15 +19,26 @@ import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
     <section itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
       <div class="readable">
         <h2 itemprop="alternateName">Senior Web Developer</h2>
+        <span itemprop="estimatedSalary" itemscope itemtype="https://schema.org/MonetaryAmountDistribution">
+          <meta itemprop="median" content="1000000000" />
+          <meta itemprop="currency" content="USD" />
+          <meta itemprop="name" content="base" />
+          <meta itemprop="duration" content="P1Y" />
+        </span>
+        <span itemprop="occupationLocation" itemscope itemtype="https://schema.org/Country">
+          <meta itemprop="name" content="United States" />
+        </span>
 
-        I am a <em itemprop="name">Frontend Architect</em>, which also means <em itemprop="alternateName">{ALT_TITLES.join(', ')}</em> or any other of a long list of new-hotness titles. I'm a polyglot, full-stack engineer who specializes in the front-end - which really just means I care about every User getting what they need.
+        <p>I am a <em itemprop="name">Frontend Architect</em>, which also means <em itemprop="alternateName">{ALT_TITLES.join(', ')}</em> or any other of a long list of new-hotness titles. I'm a polyglot, full-stack engineer who specializes in the front-end - which really just means I care about every User getting what they need.</p>
         
-        You can boil down what I do to four things: 
+        <div itemprop="description">
+          You can boil down what I do to four things: 
 
-        1. I build performant and accessible UIs in whatever flavor frontend you like 
-        2. I mentor and equip development teams to efficiently do the same 
-        3. I build DevX that tests, prototypes and deploys
-        4. I figure out how to make things work that shouldn't work
+          1. I build performant and accessible UIs in whatever flavor frontend you like 
+          2. I mentor and equip development teams to efficiently do the same 
+          3. I build DevX that tests, prototypes and deploys
+          4. I figure out how to make things work that shouldn't work
+        </div>
 
       </div>
       <div class="meow">
