@@ -24,6 +24,8 @@ const blahg = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
+		pageTitle: z.string().optional(),
+		pageDescription: z.string().optional(),
 		// Transform string to Date object
 		pubDate: z
 			.string()

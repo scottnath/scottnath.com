@@ -28,10 +28,10 @@ if (!heroImgAlt) {
 ---
 
 <SiteWide title={title} description={description} image={heroImage}>
-	<article class="blog-post" itemscope itemtype={itemtype}>
+	<article class="blog-post" itemscope itemtype={itemtype} itemref="scottnath">
     <header>
-      {heroImage && <img width="100%" height="auto" src={heroImage} alt={heroImgAlt} />}
-      <h1 class="title" itemprop="name">{title}</h1>
+      {heroImage && <img width="100%" height="auto" itemprop="image" src={heroImage} alt={heroImgAlt} />}
+      <h1 class="title" itemprop="headline">{title}</h1>
       <p itemprop="description">{description}</p>
       <dl class="article-dates">
         <div>

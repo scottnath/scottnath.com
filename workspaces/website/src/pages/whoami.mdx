@@ -9,8 +9,8 @@ import FormattedDate from '~/components/FormattedDate.astro';
 import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
 
 
-<SiteWide title={frontmatter.title} description={SCOTT_SHORT_DESC} image={frontmatter.heroImage} itemscope itemtype="https://schema.org/AboutPage">
-  <article itemprop="about" itemscope itemtype="https://schema.org/Person">
+<SiteWide title={frontmatter.title} description={SCOTT_SHORT_DESC} image={frontmatter.heroImage} itemscope itemtype="https://schema.org/ProfilePage">
+  <article itemprop="mainEntity" itemscope itemtype="https://schema.org/Person">
     <header class="readable">
       <h1>About <span itemprop="name">Scott Nath</span></h1>
 
@@ -19,6 +19,15 @@ import { SCOTT_SHORT_DESC, ALT_TITLES } from '~consts';
     <section itemprop="hasOccupation" itemscope itemtype="https://schema.org/Occupation">
       <div class="readable">
         <h2 itemprop="alternateName">Senior Web Developer</h2>
+        <span itemprop="estimatedSalary" itemscope itemtype="https://schema.org/MonetaryAmountDistribution">
+          <meta itemprop="median" content="1000000000" />
+          <meta itemprop="currency" content="USD" />
+          <meta itemprop="name" content="base" />
+          <meta itemprop="duration" content="P1Y" />
+        </span>
+        <span itemprop="occupationLocation" itemscope itemtype="https://schema.org/Country">
+          <meta itemprop="name" content="United States" />
+        </span>
 
         I am a <em itemprop="name">Frontend Architect</em>, which also means <em itemprop="alternateName">{ALT_TITLES.join(', ')}</em> or any other of a long list of new-hotness titles. I'm a polyglot, full-stack engineer who specializes in the front-end - which really just means I care about every User getting what they need.
         
