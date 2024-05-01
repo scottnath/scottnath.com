@@ -11,17 +11,17 @@ const postBorder = STRIPE_COLORS[0];
 const { class: className, ...rest } = Astro.props;
 ---
 
-<aside itemscope itemtype="https://schema.org/Blog" class={className} {...rest}>
+<aside itemscope itemtype="https://schema.org/Blog" class={className} {...rest} itemref="scottnath">
   <p itemprop="name">Latest blah blah blahg</p>
   <ul class="blahg-list">
     {
       shortList.map((post, index) => (
-        <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemref="scottnath">
           <a href={`/blahg/${post.slug}/`} itemprop="url">
             <img itemprop="image" src={post.data.heroImage} alt={post.data.heroImageDesc || post.data.title} loading={index < 6 ? 'eager' : 'lazy'} width="1000" height="420" />
           </a>
           <div class="content">
-            <a href={`/blahg/${post.slug}/`} itemprop="name">{post.data.title}</a>
+            <a href={`/blahg/${post.slug}/`}><span itemprop="headline">{post.data.title}</span></a>
           </div>
         </li>
       ))
@@ -73,6 +73,7 @@ const { class: className, ...rest } = Astro.props;
         font-size: var(--font-size-light);
         a {
           text-decoration: none;
+          font-weight: var( --font-weight-bold);
         }
       }
     }

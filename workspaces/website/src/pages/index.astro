@@ -9,10 +9,10 @@ import BlahgList from "~components/BlahgList.astro";
 import { SITE_TITLE, SITE_SUBTITLE, SITE_DESCRIPTION, SCOTT_SHORT_DESC } from '../consts';
 ---
 
-<SiteWide title={`${SITE_TITLE}, ${SITE_SUBTITLE}`} description={SITE_DESCRIPTION}>
-  <article itemscope itemtype="https://schema.org/Person">
+<SiteWide title={`${SITE_TITLE}, ${SITE_SUBTITLE}`} description={SITE_DESCRIPTION} itemscope itemtype="https://schema.org/ProfilePage" itemref="scottnath">
+  <article itemprop="mainEntity" itemscope itemtype="https://schema.org/Person">
     <header class="readable">
-      <h1>Scott Nath lives here <span><a href="/whoami">who am i?</a></span></h1>
+      <h1><span itemprop="name">Scott Nath</span> lives here <span><a href="/whoami">who am i?</a></span></h1>
       <p itemprop="description">{SCOTT_SHORT_DESC}</p>
     </header>
     <section>
