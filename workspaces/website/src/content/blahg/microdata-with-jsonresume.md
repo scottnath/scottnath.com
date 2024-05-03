@@ -2,7 +2,7 @@
 title: "Make your resume SEO friendly using JSON Resume with microdata"
 description: "How to generate your resume with schema.org vocabulary HTML markup using JSON Resume"
 pubDate: "2024-05-02"
-heroImage: "/blahg-assets/microdata-with-jsonresume.avif"
+heroImage: "/blahg-assets/jsonresume/microdata-with-jsonresume.avif"
 heroImageDesc: 'Article header image shows a portion of a resume with the name Scott Nath and a subheading of the title of this article. The other side of the image shows a screenshot of the schema validator output for the resume section'
 ---
 
