@@ -25,6 +25,6 @@
     "workspaces/*"
   ],
   "devDependencies": {
-    "astro": "4.5.18"
+    "astro": "4.8.5"
   }
 }
