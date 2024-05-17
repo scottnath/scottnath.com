@@ -1,0 +1,278 @@
+{
+  "basics": {
+    "profiles": [
+      {
+        "url": "https://linkedin.com/in/scottnath",
+        "username": "scottnath",
+        "network": "LinkedIn"
+      },
+      {
+        "url": "https://github.com/scottnath",
+        "username": "scottnath",
+        "network": "GitHub"
+      },
+      {
+        "url": "https://mastodon.social/@scottnath",
+        "username": "scottnath@mastodon.social",
+        "network": "Mastodon"
+      },
+      {
+        "url": "https://dev.to/scottnath",
+        "username": "scottnath",
+        "network": "DEV"
+      }
+    ],
+    "summary": "Leader with a track record of success in translating business requirements and staff needs into powerful new web\napplications, infrastructure, and back-end tools critical for the delivery of flexible, reusable code designed to\naccelerate business goals. A strong and committed foundation in problem solving, inclusive developer mentorship\nwith pair-programming and coaching, coding POC prototypes, and architecting innovative Design Systems that build\nconsensus and cross-discipline collaboration via time-saving, user-centric web development environments.",
+    "location": {
+      "city": "New Paltz",
+      "countryCode": "US",
+      "region": "Hudson Valley"
+    },
+    "name": "Scott Nath",
+    "label": "Frontend Architect",
+    "url": "https://scottnath.com",
+    "email": "scott@scottnath.com"
+  },
+  "skills": [
+    {
+      "level": "Senior",
+      "name": "Languages",
+      "itemtype": "ComputerLanguage",
+      "keywords": [
+        "Javascript",
+        "Typescript",
+        "CSS",
+        "HTML",
+        "Bash/Shell",
+        "Gherkin",
+        "Python",
+        "PHP"
+      ]
+    },
+    {
+      "level": "Senior",
+      "name": "Libraries & Tools",
+      "itemtype": "SoftwareSourceCode",
+      "keywords": [
+        "NodeJS ",
+        "Vite",
+        "Storybook",
+        "LangChain AI",
+        "Docker",
+        "GraphQL",
+        "ExpressJS",
+        "Octokit",
+        "Wordpress",
+        "i18n",
+        "Microdata"
+      ]
+    },
+    {
+      "level": "Senior",
+      "name": "UI Components",
+      "itemtype": "SoftwareSourceCode",
+      "keywords": [
+        "Web Components",
+        "VueJS",
+        "Lit",
+        "Sass",
+        "HandlebarsJS",
+        "ReactJS",
+        "AngularJS"
+      ]
+    },
+    {
+      "level": "Senior",
+      "name": "DevOps",
+      "itemtype": "SoftwareSourceCode",
+      "keywords": [
+        "GitHub Actions",
+        "CI/CD",
+        "Automated Testing",
+        "Travis",
+        "GitHub",
+        "Kubernetes"
+      ]
+    },
+    {
+      "level": "Senior",
+      "name": "Testing & QA",
+      "itemtype": "SoftwareSourceCode",
+      "keywords": [
+        "accessibility",
+        "UI Unit Testing",
+        "Testing-Library",
+        "Jest",
+        "Playwright",
+        "Vitest",
+        "Chromatic",
+        "Test driven development (TDD)",
+        "Screen reader testing"
+      ]
+    },
+    {
+      "level": "Senior",
+      "name": "Soft Skills",
+      "keywords": [
+        "Agile",
+        "honest and clear communicator",
+        "Design Thinking",
+        "developer advocacy",
+        "developer translation"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "endDate": "2023-05-15",
+      "position": "Senior Software Engineer",
+      "summary": "Directed all aspects of DevOps architecture for a multi-framework design system with Storybook while increasing performance and efficiency through the development and launch of automated tools and cross-org systems.",
+      "startDate": "2020-04-01",
+      "location": "New York, NY",
+      "name": "IBM CIO",
+      "highlights": [
+        "Leader in implementing the Figma designs, a/b testing, i18n internationalization and developer processes on a\ncomplete rebuild of the employee portal, which combined 5 teams into 1 cross-functional collaborating team",
+        "Leadership role as the architect of an Innersource multi-framework design system and front end software engineering environment and tooling for the simultaneous creation of Vanilla and Vue.js components.",
+        "Inherited an existing, hand-released component library project and integrated version control, automated semver releases, extensive testing, and CI/CD with consistent and trustable release naming and scheduling."
+      ],
+      "itemtype": "Corporation"
+    },
+    {
+      "endDate": "2020-04-01",
+      "position": "System Architect",
+      "summary": "Demonstrated continued success as the creator of architecture for the Watson Health Pattern & Asset Library (PAL).",
+      "startDate": "2017-01-01",
+      "location": "New York, NY",
+      "name": "IBM Watson Health",
+      "highlights": [
+        "Leadership role in the creation of Watson Health’s client-side design system for native and web applications.",
+        "Consolidated 3 disparate UI component libraries into 1 and standardized collaborative processes by architecting one design system which integrated UI design and inclusive user experiences for multiple teams."
+      ],
+      "itemtype": "Corporation"
+    },
+    {
+      "endDate": "2017-01-01",
+      "position": "Senior Frontend Developer",
+      "summary": "Streamlined access to Watson developer documentation by creating a new open-source content management system.",
+      "startDate": "2016-01-01",
+      "location": "New York, NY",
+      "name": "IBM Watson",
+      "highlights": [
+        "Partnered with the design team tasked with creating a developer-centric and accessible documentation site adhering to IBM Watson AI development teams’s technical specs, reducing 8 distributed systems to 1",
+        "Lead architect the end-to-end completion of a full-stack open-source project, Punchcard CMS, which required backend functionality for immutable data, content versioning, and subscribe-able publishing gateways."
+      ],
+      "itemtype": "Corporation"
+    },
+    {
+      "endDate": "2015-12-01",
+      "position": "Software Architect",
+      "summary": "Developed pixel-perfect HTML and CSS for customer-facing streaming applications.",
+      "startDate": "2006-11-01",
+      "url": "https://www.nbcuniversal.com/",
+      "location": "Times Square, NY",
+      "name": "NBC Universal",
+      "highlights": [
+        "Delivered reusable HTML/SaaS product while translating capabilities and features into in-depth documentation.",
+        "Created NBC’s WordPress system (NBCUPress) which included a focus on a reusable deployment system in PHP."
+      ],
+      "itemtype": "NewsMediaOrganization"
+    }
+  ],
+  "projects": [
+    {
+      "startDate": "2023-08-01",
+      "name": "Profile Components",
+      "keywords": [
+        "web components",
+        "native browser APIs",
+        "evergreen"
+      ],
+      "url": "https://github.com/scottnath/profile-components",
+      "description": "zero dependency native web components to present user profiles",
+      "type": "open source",
+      "roles": [
+        "Architect",
+        "Developer"
+      ],
+      "highlights": [
+        "Created native web components to learn web components",
+        "Created a set of zero dependency native web components to present user profiles from various social networks by querying the site APIs for the latest user profile",
+        "Styling to web standards and cross-browser compatibility using the newest browser-supported CSS functionality like nesting and container-queries",
+        "Architected fullstack DevOps solutions to ensure overall quality of the project including a Storybook implementation with user interface design testing and VRT (visual regression testing), CI/CD for automated deployment, releases, and testing, and auto-generated PRs for dependency updates",
+        "Test driven development using the native Node test runner, node:test, Guidepup for screen reader and web accessibility assurance."
+      ]
+    },
+    {
+      "startDate": "2024-04-01",
+      "name": "jsonresume-theme-microdata",
+      "keywords": [
+        "jsonresume",
+        "microdata"
+      ],
+      "url": "https://github.com/scottnath/jsonresume-theme-microdata",
+      "description": "A flat JSON Resume theme with schema.org microdata, compatible with the latest resume schema",
+      "type": "open source",
+      "roles": [
+        "Architect",
+        "Developer"
+      ]
+    },
+    {
+      "startDate": "2016-01-01",
+      "name": "Punchcard CMS",
+      "endDate": "2018-12-31",
+      "url": "https://github.com/punchcard-cms",
+      "description": "Headless Content Management System designed with content strategy at its heart. Built with Node.",
+      "type": "open source",
+      "roles": [
+        "Architect",
+        "Developer"
+      ],
+      "highlights": [
+        "Designed and developed a server-side headless, open-source content management system built with a focus on quality through content-strategy reflecting real-world use cases and a lean Postgresql/postgres backend.",
+        "Architected full stack system architecture for auto-generated forms, localization, role-based administration, content approval workflows with revisioning, scheduled releases, caching, and subscriptions via webhooks."
+      ]
+    },
+    {
+      "startDate": "2012-01-01",
+      "entity": "videogame.camp",
+      "name": "The Chase",
+      "endDate": "2014-01-01",
+      "keywords": [
+        "raspberry pi",
+        "linux"
+      ],
+      "url": "https://videogame.camp/the-chase/about/",
+      "description": "A high-tech game of hide and seek",
+      "type": "meatspace",
+      "roles": [
+        "Inventor",
+        "Developer"
+      ],
+      "highlights": [
+        "Created a raspberry pi-based remote camera live projection system",
+        "Hosted multiple in-person events where the public had to look for the ghost in the crowd"
+      ]
+    },
+    {
+      "startDate": "2023-04-01",
+      "name": "StoryDocker",
+      "url": "https://github.com/storydocker",
+      "description": "Storybook, but as a microservice",
+      "type": "open source",
+      "roles": [
+        "Architect",
+        "Owner"
+      ],
+      "highlights": [
+        "Implemented Storybook as a microservice using Docker Containers released as an open-source tool (StockDocker) able to be installed with zero dependencies and which features a full testing suite enabling prototyping and testing UI and user experience via Storybook’s testing-library integrations.",
+        "Eliminated the need for multiple implementations of Storybook (previously one for each application development environment) by introducing the ability for Storybook to run multiple JS frameworks out-of-the-box."
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://scottnath.com/resume.json",
+    "version": "1.0.0",
+    "lastModified": "2024-05-17T18:26:35.690Z"
+  }
+}
