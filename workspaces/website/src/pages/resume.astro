@@ -1,34 +1,21 @@
 ---
-
 import SiteWide from '~layouts/SiteWide.astro';
-import Resume from "../components/resume/index";
+import {JsonResume} from 'jsonresume-component';
+import { SITE_DESCRIPTION } from '../consts.ts'
 
-import { getResume } from "../utils/airtable";
-
-const content = await getResume();
-const pageTitle = `Resume for Scott Nath - ${content.basics.short_summary}`;
+const pageTitle = `Resume for Scott Nath - ${SITE_DESCRIPTION}`;
 ---
-<SiteWide title={pageTitle} description={content.basics.summary}>
-  <div class="readable">
-    <ul class="actions">
-      <li><button onclick="window.print();">🖨️ print</button></li>
-    </ul>
+<SiteWide title={pageTitle}>
+  <div class="resume">
+    <JsonResume client:only="lit" json_url="/resume.json" preordered="true" style="--color-background: var(--bg-color-normal); --color-link: var(--color-link); --color-primary: var(--color-normal); --color-secondary: var(--color-light); --color-dimmed: var(--bg-color-light)"></JsonResume>
   </div>
-	<Resume
-		title={content.basics.title}
-		subtitle={content.basics.subtitle}
-		summary={content.basics.summary}
-		email={content.basics.email}
-		phone={content.basics.phone}
-		website={content.basics.website}
-		skillsets={content.skillsets}
-		jobs={content.positions}
-		projects={content.projects}
-	/>
-
 </SiteWide>
 <style>
   .readable:has(.actions) {
     margin-bottom: 0;
+  }
+  .resume {
+    max-width: 51em;
+    margin: 0 auto;
   }
 </style>
