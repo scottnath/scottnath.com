@@ -118,11 +118,3 @@ At the risk of recreating the [detailed configuration docs in the `jsonresume-co
 [jtm-example]: https://github.com/scottnath/jsonresume-theme-microdata/TBD___
 [jte]: https://github.com/rbardini/jsonresume-theme-even
 [schemaorg]: https://schema.org
-[schemaorg-started]: https://schema.org/docs/gs.html
-[schemaorg-person]: https://schema.org/Person
-[schemaorg-article]: https://schema.org/Article
-[schemaorg-org]: https://schema.org/Organization
-[schemaorg-author]: https://schema.org/author
-[schemaorg-alumniOf]: https://schema.org/alumniOf
-[schemaorg-val]: https://validator.schema.org
-[myresumejson]: https://gist.github.com/scottnath/9e7a7ceb9425336c6aa08d58afb63b8d
