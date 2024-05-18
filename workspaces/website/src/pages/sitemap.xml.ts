@@ -20,7 +20,7 @@ const sitepages = [
   },
   {
     url: 'https://scottnath.com/resume',
-    updatedDate: new Date('2024-04-26'),
+    updatedDate: new Date('2024-05-17'),
   },
   {
     url: 'https://scottnath.com/blahg',
