@@ -16,15 +16,15 @@ const sitepages = [
   },
   {
     url: 'https://scottnath.com/whoami',
-    updatedDate: new Date('2024-05-01'),
+    updatedDate: new Date('2024-05-20'),
   },
   {
     url: 'https://scottnath.com/resume',
-    updatedDate: new Date('2024-05-17'),
+    updatedDate: new Date('2024-05-20'),
   },
   {
     url: 'https://scottnath.com/blahg',
-    updatedDate: new Date('2024-05-01'),
+    updatedDate: new Date('2024-05-20'),
   }
 ];
 
