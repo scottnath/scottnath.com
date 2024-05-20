@@ -6,11 +6,11 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "postbuild": "npm run site-files",
     "preview": "astro preview",
     "astro": "astro",
-    "jekyllfile": "touch ./dist/.nojekyll",
-    "cname": "echo \"scottnath.com\" >>  ./dist/CNAME",
-    "site-files": "npm run jekyllfile && npm run cname"
+    "indexnow": "echo \"b2b2368940cf41138c269b3c4cb78b01\" >>  ./dist/b2b2368940cf41138c269b3c4cb78b01.txt",
+    "site-files": "npm run indexnow"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.2.4",
