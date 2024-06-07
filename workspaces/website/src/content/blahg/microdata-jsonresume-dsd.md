@@ -17,7 +17,7 @@ I split `<json-resume>` into two, adding `<json-resume-ui>` which can be server-
 
 This article is about splitting a LitElement up to allow rendering on a server, but the vehicle-for-understanding is the `<json-resume>` component.
 
-The `jsonresume-component` package distributes a set of web components used to generate your resume from a JSON file following the [JSON Resume][jsonresume] schema and includes HTML-based microdata following the [Schema.org][schemaorg] vocabulary set. The HTML is created from using the [jsonresume-theme-microdata][jtm] theme, creating an HTML-based resume documented with microdata.
+The [`jsonresume-component` package][jc] distributes a set of web components used to generate your resume from a JSON file following the [JSON Resume][jsonresume] schema. The HTML is created from using the [jsonresume-theme-microdata][jtm] theme, which includes HTML-based microdata following the [Schema.org][schemaorg] vocabulary set.
 
 * [article: "How about a JSON Resume web component with configurable microdata?"][jc-art]
 * [`jsonresume-component` on GitHub][jc]

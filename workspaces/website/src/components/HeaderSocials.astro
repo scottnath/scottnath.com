@@ -4,7 +4,7 @@ import { SOCIALS } from '~/consts';
 
 <address class="socials" aria-label="Also find me on these sites">
   {SOCIALS.map(({ title, url, logo, label }) => (
-    <a rel="me" href={url} aria-label={label}><img src={logo.src} alt={`${title} logo`} aria-hidden="true" /><span>{title}</span></a>
+    <a rel="me" href={url} aria-label={label} class="u-url"><img src={logo.src} alt={`${title} logo`} aria-hidden="true" /><span>{title}</span></a>
   ))}
 </address>
 
