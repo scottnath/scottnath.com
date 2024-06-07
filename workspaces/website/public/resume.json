@@ -272,7 +272,15 @@
   ],
   "meta": {
     "canonical": "https://scottnath.com/resume.json",
-    "version": "1.0.0",
-    "lastModified": "2024-05-17T18:26:35.690Z"
+    "version": "1.1.0",
+    "lastModified": "2024-06-03T18:26:35.690Z",
+    "themeOptions": {
+      "preordered": true,
+      "sectionTitles": {
+        "work": "Professional Experience",
+        "projects": "Open Source Projects",
+        "skills": "Core Expertise"
+      }
+    }
   }
 }
