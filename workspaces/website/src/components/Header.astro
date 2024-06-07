@@ -4,13 +4,13 @@ import HeaderSocials from './HeaderSocials.astro';
 import { SITE_TITLE, SITE_SUBTITLE, PROFILE_PIC, SOCIALS } from '~/consts';
 ---
 
-<header id="scottnath" itemprop="author" itemscope itemtype="https://schema.org/Person">
+<header class="h-card" id="scottnath" itemprop="author" itemscope itemtype="https://schema.org/Person">
   <h2>
-    <span class="name" itemprop="name">{SITE_TITLE}</span>
-    <span class="title" itemprop="jobTitle">{SITE_SUBTITLE}</span>
+    <span class="name p-name" itemprop="name">{SITE_TITLE}</span>
+    <span class="title p-job-title" itemprop="jobTitle">{SITE_SUBTITLE}</span>
   </h2>
   <HeaderNav />
-  <img src={PROFILE_PIC} alt="Scott Nath's picture" width="400" height="400" class="avatar" itemprop="image" />
+  <a href="https://scottnath.com" class="u-url u-uid"><img src={PROFILE_PIC} alt="Scott Nath's picture" width="400" height="400" class="avatar u-photo" itemprop="image" /></a>
   <HeaderSocials class="socials" />
 </header>
 <style>

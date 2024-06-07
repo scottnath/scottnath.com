@@ -106,14 +106,14 @@ At the risk of recreating the [detailed configuration docs in the `jsonresume-co
 **Important reminder**: this is not just your resume in a web component! It's also microdata! Check out the [results from the Google Rich Results Test](https://search.google.com/test/rich-results/result?id=ctWocdt--8-0Kq5JFMb9tA) for [the resume on my website][my-resume].
 
 
+[jc]: https://github.com/scottnath/jsonresume-component
+[jc-sb]: https://main--6632f42ef9bacea464588c02.chromatic.com
 [microdata-html]: /blahg/microdata-with-html/
 [microdata-jsonresume]: /blahg/microdata-with-jsonresume/
 [my-resume]: /resume/
 [jsonresume]: https://jsonresume.org
 [jsonresume-schema]: https://github.com/jsonresume/resume-schema/blob/master/schema.json
 [jsonresume-project]: https://jsonresume.org/projects/
-[jc]: https://github.com/scottnath/jsonresume-component
-[jc-sb]: https://6647817e5224ff5c42e64d5e-dmlkvzjlzg.chromatic.com/
 [jtm]: https://github.com/scottnath/jsonresume-theme-microdata
 [jtm-example]: https://github.com/scottnath/jsonresume-theme-microdata/TBD___
 [jte]: https://github.com/rbardini/jsonresume-theme-even

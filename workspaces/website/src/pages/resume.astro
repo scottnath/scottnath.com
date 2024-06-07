@@ -1,13 +1,15 @@
 ---
 import SiteWide from '~layouts/SiteWide.astro';
-import {JsonResume} from 'jsonresume-component';
-import { SITE_DESCRIPTION } from '../consts.ts'
+import {JsonResumeUI} from 'jsonresume-component/ui';
+import { SITE_SUBTITLE, SITE_DESCRIPTION } from '../consts.ts'
+import resumejson from '../../public/resume.json'
+import styles from 'jsonresume-component/src/style.css?inline'
 
-const pageTitle = `Resume for Scott Nath - ${SITE_DESCRIPTION}`;
+const pageTitle = `Resume for Scott Nath - ${SITE_SUBTITLE}`;
 ---
-<SiteWide title={pageTitle}>
+<SiteWide title={pageTitle} description={SITE_DESCRIPTION}>
   <div class="resume">
-    <JsonResume client:only="lit" json_url="/resume.json" preordered="true" style="--color-background: var(--bg-color-normal); --color-link: var(--color-link); --color-primary: var(--color-normal); --color-secondary: var(--color-light); --color-dimmed: var(--bg-color-light)"></JsonResume>
+    <JsonResumeUI resumejson={resumejson} stylesheet={styles} style="--color-background: var(--bg-color-normal); --color-link: var(--color-link); --color-primary: var(--color-normal); --color-secondary: var(--color-light); --color-dimmed: var(--bg-color-light)"></JsonResumeUI>
   </div>
 </SiteWide>
 <style>
