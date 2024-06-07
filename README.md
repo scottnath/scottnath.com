@@ -1,6 +1,6 @@
 # scottnath.com version 1,248,662
 
-## The definite.last-time.FINAL.next2.2010.final.website edition
+## The definite.last-time.FINAL.next2.2010.final.website.dsd edition
 
 Makin the same site over and over again since 1999
 
