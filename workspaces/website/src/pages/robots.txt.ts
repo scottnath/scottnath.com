@@ -16,6 +16,10 @@ Disallow: /
 User-agent: anthropic-ai
 Disallow: /
 
+User-agent: Applebot
+User-agent: Applebot-Extended
+Disallow: /
+
 User-agent: AwarioRssBot
 User-agent: AwarioSmartBot
 Disallow: /
