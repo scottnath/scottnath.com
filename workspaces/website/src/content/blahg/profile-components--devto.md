@@ -2,7 +2,7 @@
 title: "DEV Profile Web Components: embed your dev.to profile anywhere"
 description: "Learn about native web components that showcase DEV profiles and posts."
 pubDate: "2023-10-18"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "/profile-components-blahg/profile-components-devto-header.avif"
 ---
 

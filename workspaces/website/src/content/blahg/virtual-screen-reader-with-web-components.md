@@ -2,7 +2,7 @@
 title: "Storybook setup: Virtual Screen Reader in Web Components"
 description: "How to set up Storybook to test shadowroot elements in web components using shadow-dom-testing-library and Guidepup's Virtual Screen Reader."
 pubDate: "2024-03-07"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "/blahg-assets/storybook-setup-virtual-screen-reader-with-web-components.avif"
 heroImageDesc: 'Article header image shows the Guidepup, webcomponents, and Storybook logos between greater-than and less-than characters with text below them that reads "Storybook Setup for Virtual Screen Reader + Web Components"'
 ---

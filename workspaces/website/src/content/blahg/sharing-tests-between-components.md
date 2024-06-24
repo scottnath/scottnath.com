@@ -2,7 +2,7 @@
 title: "Sharing Interaction Tests Between Components"
 description: "How to share testing-library UI tests between child and parent components"
 pubDate: "2023-04-26"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "/blahg-assets/sharing-tests-with-a-handshake.avif"
 ---
 

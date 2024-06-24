@@ -2,7 +2,7 @@
 title: "How to Add Declarative Shadow DOM to a LitElement Web Component"
 description: "Converting a LitElement web component to allow Server Side Rendering using Declarative Shadow DOM"
 pubDate: "2024-06-07"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "/blahg-assets/jsonresume/jsonresume-component-ssr-dsd.avif"
 heroImageDesc: 'Article header image shows the words "Server-Side Rendering a Declarative Shadow DOM with LitElement"'
 ---

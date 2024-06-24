@@ -2,7 +2,7 @@
 title: "Sharing UI Tests Between Javascript Frameworks"
 description: "How to share testing-library UI tests between Javascript frameworks with the same or similar components and use them in Storybook and unit testing."
 pubDate: "2023-06-27"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "/blahg-assets/js-framework-share-tests.avif"
 ---
 

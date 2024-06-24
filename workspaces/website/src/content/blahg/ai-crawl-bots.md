@@ -2,7 +2,7 @@
 title: "I turned off AI bot crawlers"
 description: "Years of private corporations stealing data has turned me off to giving their AI tools content to help replace me"
 pubDate: "2024-05-01"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "/blahg-assets/no-ai-allowed--i-turned-off-ai-crawlers.avif"
 heroImageDesc: 'Article header image shows a sign that says "No AI Allowed" with a robot head propped on top'
 ---

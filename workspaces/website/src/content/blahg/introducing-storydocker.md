@@ -2,7 +2,7 @@
 title: "StoryDocker: Storybook, but it's a microservice"
 description: "StoryDocker is an open-source tool which allows local Storybook development without dependencies by leveraging docker containers"
 pubDate: "2023-04-10"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "./blahg-assets/storydocker-underwater.avif"
 ---
 

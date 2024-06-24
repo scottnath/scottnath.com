@@ -2,7 +2,7 @@
 title: "Simple setup: Virtual Screen Reader in Storybook"
 description: "How to set up Storybook with Guidepup's Virtual Screen Reader and test what the screen reader speaks"
 pubDate: "2024-03-01"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "/blahg-assets/simple-setup-guidepup-virtual-screen-reader-with-storybook.avif"
 heroImageDesc: 'Article header image shows the Guidepup and Storybook logos between greater-than and less-than characters with text below them that reads "Simple Setup for Virtual Screen Reader + Storybook"'
 ---

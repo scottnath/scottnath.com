@@ -2,7 +2,7 @@
 title: "Running a local multi-framework composition Storybook"
 description: "How to run a local multi-framework composition Storybook instance with one command"
 pubDate: "2023-05-17"
-updatedDate: "2024-06-23"
+updatedDate: "2024-06-24"
 heroImage: "/blahg-assets/astro-multiframework-storybook.avif"
 ---
 
