@@ -2,6 +2,7 @@
 title: "Sharing Interaction Tests Between Vitest and Storybook"
 description: "How to use the same testing-library UI tests for Storybook Interaction testing and Vitest, Vite's native test runner."
 pubDate: "2023-06-08"
+updatedDate: "2024-06-23"
 heroImage: "/blahg-assets/vitest-shared-tests-basic.avif"
 ---
 

@@ -2,6 +2,7 @@
 title: "Profile Components: display social profiles in native web components"
 description: "Profile-components are a set of web components with zero dependencies that display publicly-available profile information from various social networks. Currently two: GitHub and dev.to."
 pubDate: "2023-10-10"
+updatedDate: "2024-06-23"
 heroImage: "/profile-components-blahg/profile-components-header-prod.avif"
 ---
 

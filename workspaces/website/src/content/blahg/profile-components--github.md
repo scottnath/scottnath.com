@@ -2,6 +2,7 @@
 title: "GitHub Profile Components as Native Web Components"
 description: "Discover native web components that showcase GitHub profiles and repositories within the profile-components library."
 pubDate: "2023-10-11"
+updatedDate: "2024-06-23"
 heroImage: "/profile-components-blahg/profile-components-github-header-prod.avif"
 ---
 

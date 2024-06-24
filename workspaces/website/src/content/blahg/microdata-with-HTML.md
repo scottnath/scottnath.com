@@ -2,6 +2,7 @@
 title: "How to Boost SEO by Enhancing HTML with Microdata"
 description: "Boost SEO with microdata in HTML. Gain better visibility, higher click-through rates, and improved indexing. Includes code examples and schema output."
 pubDate: "2024-05-01"
+updatedDate: "2024-06-23"
 heroImage: "/blahg-assets/microdata-html--boost-seo-schema.org-validator.avif"
 heroImageDesc: 'Article header image shows the output from the Schema.org validator for an Article with the same headline and summary as this article'
 ---

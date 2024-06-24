@@ -2,6 +2,7 @@
 title: "Who Me: Notes on creating a custom Chat GPT"
 description: "Some notes on creating a custom Chat GPT that can consistently generate specific styles of characters using Dall-E"
 pubDate: "2023-12-01"
+updatedDate: "2024-06-23"
 heroImage: "/who-me/brady-bunch-who-me-grid.avif"
 ---
 

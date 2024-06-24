@@ -2,6 +2,7 @@
 title: "How about a JSON Resume web component with configurable microdata?"
 description: "Introduction to the jsonresume-component module, a web component to display your JSON Resume documented with microdata"
 pubDate: "2024-05-17"
+updatedDate: "2024-06-23"
 heroImage: "/blahg-assets/jsonresume/jsonresume-component.png"
 heroImageDesc: 'Article header image shows a piece of HTML, specifically <json-resume>'
 ---

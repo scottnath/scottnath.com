@@ -2,6 +2,7 @@
 title: "Bugfix: Multiple Vite Storybooks from Same node_modules"
 description: "Resolving errors that occur when attempting to run multiple instances of Vite-builder Storybooks in the same package."
 pubDate: "2023-05-12"
+updatedDate: "2024-06-23"
 heroImage: "/blahg-assets/bug-screenshot-vite-storybook.avif"
 ---
 
