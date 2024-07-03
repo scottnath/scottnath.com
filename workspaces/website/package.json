@@ -13,24 +13,24 @@
     "site-files": "npm run indexnow"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.0",
-    "@astrojs/react": "^3.5.0",
-    "@astrojs/rss": "^4.0.6",
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/react": "^3.6.0",
+    "@astrojs/rss": "^4.0.7",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "airtable": "^0.12.2",
-    "astro": "4.10.0",
-    "jsonresume-component": "^0.3.0",
-    "marked": "^12.0.2",
+    "astro": "4.11.4",
+    "jsonresume-component": "^0.3.1",
+    "marked": "^13.0.1",
     "profile-components": "^0.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "sitemap": "^8.0.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.3"
   },
   "devDependencies": {
-    "@astrojs/lit": "^4.2.0",
-    "@astrojs/partytown": "^2.1.0",
+    "@astrojs/lit": "^4.3.0",
+    "@astrojs/partytown": "^2.1.1",
     "@storybook/testing-library": "^0.2.2",
     "@testing-library/react": "^16.0.0",
     "@webcomponents/template-shadowroot": "^0.2.1",
@@ -39,7 +39,7 @@
     "postcss-nested": "^6.0.1",
     "prop-types": "^15.8.1",
     "resumed": "^3.0.1",
-    "sass": "^1.77.4",
+    "sass": "^1.77.6",
     "vite": "^5.2.12"
   },
   "overrides": {
