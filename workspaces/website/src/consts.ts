@@ -6,6 +6,7 @@ import devLogo from '~/assets/logos/dev.svg';
 import githubLogo from '~/assets/logos/github-inverse.svg';
 import linkedinLogo from '~/assets/logos/linkedin.svg';
 import mastodonLogo from '~/assets/logos/Mastodon.svg';
+import blueskyLogo from '~/assets/logos/bluesky.svg';
 
 export const SITE_TITLE = 'Scott Nath';
 export const SITE_SUBTITLE = 'Frontend Architect';
@@ -48,6 +49,12 @@ BLAHG.pageTitle = `${BLAHG.title}: ${BLAHG.description}`
 BLAHG.pageDesc = `Technical blog posts featuring articles about Storybook, user interface testing, frontend web development, shared testing, and web components.`
 
 export const SOCIALS = [
+  {
+    title: 'Bluesky',
+    url: 'https://bsky.app/profile/scottnath.com',
+    logo: blueskyLogo,
+    label: 'Scott Nath on Bluesky'
+  },
   {
     title: 'GitHub',
     url: 'https://github.com/scottnath',
