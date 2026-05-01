@@ -17,11 +17,11 @@ const { class: className, ...rest } = Astro.props;
     {
       shortList.map((post, index) => (
         <li itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting" itemref="scottnath">
-          <a href={`/blahg/${post.slug}/`} itemprop="url">
+            <a href={`/blahg/${post.id}/`} itemprop="url">
             <img itemprop="image" src={post.data.heroImage} alt={post.data.heroImageDesc || post.data.title} loading={index < 6 ? 'eager' : 'lazy'} width="1000" height="420" />
           </a>
           <div class="content">
-            <a href={`/blahg/${post.slug}/`}><span itemprop="headline">{post.data.title}</span></a>
+            <a href={`/blahg/${post.id}/`}><span itemprop="headline">{post.data.title}</span></a>
           </div>
         </li>
       ))

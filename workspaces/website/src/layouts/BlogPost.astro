@@ -1,22 +1,11 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
 import SiteWide from './SiteWide.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
-const { title, description, pubDate, updatedDate, heroImage, heroImageDesc, series, schemaType } = Astro.props;
-
-/**
- * @todo add series after design launch
- */
-async function getSeries() {
-	const posts = await getCollection('blahg');
-	return posts.filter((post) => ({
-		params: { series },
-		props: post,
-	}));
-}
 type Props = CollectionEntry<'blahg'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, heroImageDesc, schemaType } = Astro.props;
 
 const itemtype = `https://schema.org/${schemaType}`;
 
@@ -24,7 +13,6 @@ let heroImgAlt = heroImageDesc;
 if (!heroImgAlt) {
   heroImgAlt = `Header image for article '${title}'`
 }
-
 ---
 
 <SiteWide title={title} description={description} image={heroImage}>

@@ -23,7 +23,7 @@ const posts = (await getCollection('blahg')).sort(
       {
         posts.map((post, index) => (
           <li itemprop="significantLink" itemscope itemtype="https://schema.org/BlogPosting">
-            <a href={`/blahg/${post.slug}/`} itemprop="name">{post.data.title}</a>
+            <a href={`/blahg/${post.id}/`} itemprop="name">{post.data.title}</a>
           </li>
         ))
       }

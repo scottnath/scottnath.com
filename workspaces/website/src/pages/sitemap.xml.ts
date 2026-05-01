@@ -48,7 +48,7 @@ export async function GET() {
 
   await Promise.all(
     posts.map(async (post) => {
-      const url = `/${post.collection}/${post.slug}/`
+      const url = `/${post.collection}/${post.id}/`
       const lastmodDate = post.data.updatedDate || post.data.pubDate;
       const lastmod = new Date(lastmodDate).toISOString();
       stream.write({

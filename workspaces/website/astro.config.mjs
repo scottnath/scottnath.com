@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
-import react from '@astrojs/react';
-import lit from '@astrojs/lit';
+import lit from '@semantic-ui/astro-lit';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,9 +17,8 @@ export default defineConfig({
     '/about': '/whoami',
   },
 	site: 'https://scottnath.com',
-	integrations: [lit(), mdx(), react(), 
+	integrations: [lit(), mdx(),
     partytown({
-      // Adds dataLayer.push as a forwarding-event.
       config: {
         forward: ['dataLayer.push'],
       },
@@ -28,7 +26,6 @@ export default defineConfig({
   ],
   vite: {
     ssr: {
-      // Example: Force a broken package to skip SSR processing, if needed
       noExternal: ['jsonresume-component'],
     }
   }

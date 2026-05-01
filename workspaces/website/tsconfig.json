@@ -18,10 +18,8 @@
         "src/*"
       ]
     },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
     "types": [
-      "astro/client",
+      "astro/client"
     ]
   }
 }

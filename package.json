@@ -23,5 +23,8 @@
   "license": "MIT",
   "workspaces": [
     "workspaces/*"
-  ]
+  ],
+  "overrides": {
+    "@types/node": "^24.0.0"
+  }
 }

@@ -110,3 +110,6 @@ bak
 
 # storybook
 storybook-static
+
+# visual regression scratch
+.visual-regression/
