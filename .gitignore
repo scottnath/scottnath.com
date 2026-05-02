@@ -113,3 +113,6 @@ storybook-static
 
 # visual regression scratch
 .visual-regression/
+
+# Sveltia CMS admin (local editing only — not deployed)
+workspaces/website/public/admin/
