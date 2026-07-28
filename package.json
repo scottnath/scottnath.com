@@ -25,6 +25,9 @@
     "workspaces/*"
   ],
   "overrides": {
-    "@types/node": "^24.0.0"
+    "@types/node": "24.0.0"
+  },
+  "devDependencies": {
+    "@scottnath/devx": "1.2.3"
   }
 }
